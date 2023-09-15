@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">L2m Notes</string>
+    <string name="ad_mod_banner_id"> </string>
+    <string name="interstitial_ad_unit_id"> </string>
+    <string name="error_dialog_title">Сталася помилка</string>
+    <string name="ok">Добре</string>
+    <string name="cancel">Відмінити</string>
+    <string name="close">Закрити</string>
+</resources>
