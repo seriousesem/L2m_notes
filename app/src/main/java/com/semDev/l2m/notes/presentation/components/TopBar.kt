@@ -6,13 +6,14 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color.Companion.Cyan
 import androidx.compose.ui.graphics.Color.Companion.DarkGray
-import androidx.compose.ui.graphics.Color.Companion.Transparent
+
 
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun AppTopBar(
+fun TopBar(
     modifier: Modifier = Modifier,
     title: String,
     navigationIcon: @Composable () -> Unit,
@@ -27,7 +28,7 @@ fun AppTopBar(
         navigationIcon = navigationIcon,
         actions = actionIcon,
         colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-            containerColor = Transparent,
+            containerColor = Cyan,
             navigationIconContentColor = DarkGray,
             titleContentColor = DarkGray
         )

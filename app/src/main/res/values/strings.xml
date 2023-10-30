@@ -1,9 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">L2m Notes</string>
-    <string name="ad_mod_banner_id"> </string>
-    <string name="interstitial_ad_unit_id"> </string>
-    <string name="error_dialog_title">Сталася помилка</string>
-    <string name="ok">Добре</string>
-    <string name="cancel">Відмінити</string>
-    <string name="close">Закрити</string>
+    <string name="error_dialog_title">Error</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="close">Close</string>
+
+    <string name="alchemy">Alchemy</string>
+    <string name="simply_alchemy">"Simply alchemy"</string>
+    <string name="higher_alchemy">"Higher alchemy"</string>
+    <string name="stage_of_alchemy">Stage of alchemy</string>
+    <string name="alchemy_insert_combination_title">Combinations of items for alchemy</string>
+    <string name="alchemy_result_combination_title">Combinations of possible rewards</string>
+    <string name="any_rare_item">Any rare item (blue)</string>
+    <string name="any_upgraded_item">Any upgraded item (greens)</string>
+    <string name="empty_slot">Empty slot</string>
+
+    <string name="ad_mod_banner_id" translatable="false"> </string>
+    <string name="interstitial_ad_unit_id" translatable="false"> </string>
+
 </resources>

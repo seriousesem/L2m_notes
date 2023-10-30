@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">L2m Notes</string>
+    <string name="error_dialog_title">Ошибка</string>
+    <string name="ok">Хорошо</string>
+    <string name="cancel">Отмена</string>
+    <string name="close">Закрыть</string>
+
+    <string name="alchemy">Алхимия</string>
+    <string name="simply_alchemy">Простая алхимия</string>
+    <string name="higher_alchemy">Высшая алхимия</string>
+    <string name="stage_of_alchemy">Этап алхимии</string>
+    <string name="alchemy_insert_combination_title">Комбинации предметов для алхимии</string>
+    <string name="alchemy_result_combination_title">Комбинаци возможных результатов</string>
+    <string name="any_rare_item">Любой редкий предмет (синька)</string>
+    <string name="any_upgraded_item">Любой улучшеный предмет (зелень)</string>
+    <string name="empty_slot">Пустой слот</string>
+
+
+</resources>
