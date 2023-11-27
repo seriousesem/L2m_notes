@@ -1,150 +1,109 @@
 package com.semDev.l2m.notes.presentation.screens.alchemy
 
-import androidx.compose.ui.graphics.Color
+import androidx.lifecycle.viewModelScope
 import com.semDev.l2m.notes.R
 import com.semDev.l2m.notes.core.BaseViewModel
-import com.semDev.l2m.notes.domain.model.alchemy.AlchemyInsertCombinationItemModel
-import com.semDev.l2m.notes.domain.model.alchemy.AlchemyInsertCombinationModel
-import com.semDev.l2m.notes.presentation.theme.Blue
+import com.semDev.l2m.notes.core.UiEvent
+import com.semDev.l2m.notes.domain.alchemy.model.alchemy.AlchemyCombinations
+import com.semDev.l2m.notes.domain.alchemy.repository.AlchemyRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.channels.Channel
+import kotlinx.coroutines.flow.receiveAsFlow
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class AlchemyViewModel @Inject constructor(
+    private val repository: AlchemyRepository
+) : BaseViewModel<AlchemyScreenEvent, AlchemyScreenState>() {
 
-) :
-    BaseViewModel<AlchemyProvider.Event, AlchemyProvider.State>() {
+    private val _uiEvent = Channel<UiEvent>()
+    init {
+        getAlchemyCombinations(AlchemyType.NormalAlchemy())
+    }
 
-    val slotsCombination = listOf(
-        AlchemyInsertCombinationModel(
-            alchemyInsertCombinationItems = listOf(
-                AlchemyInsertCombinationItemModel(
-                    itemEnchant = "",
-                    slotColor = Blue,
-                    description = R.string.any_rare_item,
-                ),
-                AlchemyInsertCombinationItemModel(
-                    itemEnchant = "",
-                    slotColor = Blue,
-                    description = R.string.any_rare_item,
-                ),
-                AlchemyInsertCombinationItemModel(
-                    itemEnchant = "",
-                    slotColor = Color.Green,
-                    description = R.string.any_upgraded_item,
-                ),
-                AlchemyInsertCombinationItemModel(
-                    itemEnchant = "",
-                    slotColor = Color.LightGray,
-                    description = R.string.empty_slot,
-                ),
-                AlchemyInsertCombinationItemModel(
-                    itemEnchant = "",
-                    slotColor = Color.LightGray,
-                    description = R.string.empty_slot,
-                )
-            ),
-        )
-
-    )
-    val simplyAlchemyStages = listOf("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12")
-
-
-    override fun setInitialState(): AlchemyProvider.State {
-        return AlchemyProvider.State(
+    override fun setInitialState(): AlchemyScreenState {
+        return AlchemyScreenState(
+            isLoading = true,
+            alchemyCombinations = listOf(),
+            alchemyType = AlchemyType.NormalAlchemy(),
             isShowDialog = false,
-            isLoading = false,
-            alchemyInsertSlotDescription = R.string.empty_slot,
-            selectedAlchemyStage = "1",
-            isDropdownOpen = false,
+            combinationItemDescription = R.string.empty_slot,
         )
     }
 
-    override fun <T> setEvent(event: AlchemyProvider.Event, data: T) {
+    override fun <T> setEvent(event: AlchemyScreenEvent, data: T) {
         when (event) {
-            AlchemyProvider.Event.SHOW_DIALOG -> {
+
+            AlchemyScreenEvent.OPEN_DIALOG -> {
                 val description = data as Int
-                showDialog(description)
+                setState {
+                    copy(
+                        isLoading = this.isLoading,
+                        alchemyCombinations = this.alchemyCombinations,
+                        alchemyType = this.alchemyType,
+                        isShowDialog = true,
+                        combinationItemDescription = description
+                    )
+                }
             }
 
-            AlchemyProvider.Event.CLOSE_DIALOG -> {
-                closeDialog()
+            AlchemyScreenEvent.CLOSE_DIALOG -> {
+                setState {
+                    copy(
+                        isLoading = this.isLoading,
+                        alchemyCombinations = this.alchemyCombinations,
+                        alchemyType = this.alchemyType,
+                        isShowDialog = false,
+                        combinationItemDescription = this.combinationItemDescription
+                    )
+                }
             }
 
-            AlchemyProvider.Event.SELECT_ALCHEMY_STAGE -> {
-                val alchemyStage = data as String
-                selectAlchemyStage(alchemyStage = alchemyStage)
+            AlchemyScreenEvent.SELECT_ALCHEMY_TYPE -> {
+                val alchemyType = data as AlchemyType
+                setState {
+                    copy(
+                        isLoading = true,
+                        alchemyCombinations = this.alchemyCombinations,
+                        alchemyType = alchemyType,
+                        isShowDialog = this.isShowDialog,
+                        combinationItemDescription = this.combinationItemDescription
+                    )
+                }
+                getAlchemyCombinations(alchemyType)
             }
+        }
+    }
 
-            AlchemyProvider.Event.OPEN_DROPDOWN -> {
-                openDropdown()
+    override fun sendUiEvent(event: UiEvent) {
+        viewModelScope.launch {
+            _uiEvent.send(event)
+        }
+    }
+
+    private fun getAlchemyCombinations(alchemyType: AlchemyType) {
+        if (alchemyType == AlchemyType.NormalAlchemy()) {
+            setState {
+                copy(
+                    isLoading = false,
+                    alchemyCombinations = repository.getNormalAlchemyCombinations(),
+                    alchemyType = this.alchemyType,
+                    isShowDialog = this.isShowDialog,
+                    combinationItemDescription = this.combinationItemDescription
+                )
             }
-
-            AlchemyProvider.Event.CLOSE_DROPDOWN -> {
-                closeDropdown()
+        } else {
+            setState {
+                copy(
+                    isLoading = false,
+                    alchemyCombinations = repository.getTopAlchemyCombinations(),
+                    alchemyType = this.alchemyType,
+                    isShowDialog = this.isShowDialog,
+                    combinationItemDescription = this.combinationItemDescription
+                )
             }
         }
     }
-
-    private fun showDialog(description: Int) {
-        setState {
-            AlchemyProvider.State(
-                isShowDialog = true,
-                isLoading = this.isLoading,
-                alchemyInsertSlotDescription = description,
-                selectedAlchemyStage = this.selectedAlchemyStage,
-                isDropdownOpen = this.isDropdownOpen,
-            )
-        }
-    }
-
-    private fun closeDialog() {
-        setState {
-            AlchemyProvider.State(
-                isShowDialog = false,
-                isLoading = this.isLoading,
-                alchemyInsertSlotDescription = this.alchemyInsertSlotDescription,
-                selectedAlchemyStage = this.selectedAlchemyStage,
-                isDropdownOpen = this.isDropdownOpen,
-            )
-        }
-    }
-
-    private fun selectAlchemyStage(alchemyStage: String) {
-        setState {
-            AlchemyProvider.State(
-                isShowDialog = this.isShowDialog,
-                isLoading = this.isLoading,
-                alchemyInsertSlotDescription = this.alchemyInsertSlotDescription,
-                selectedAlchemyStage = alchemyStage,
-                isDropdownOpen = false,
-            )
-        }
-    }
-
-    private fun openDropdown() {
-        setState {
-            AlchemyProvider.State(
-                isShowDialog = this.isShowDialog,
-                isLoading = this.isLoading,
-                alchemyInsertSlotDescription = this.alchemyInsertSlotDescription,
-                selectedAlchemyStage = this.selectedAlchemyStage,
-                isDropdownOpen = true,
-            )
-        }
-    }
-
-    private fun closeDropdown() {
-        setState {
-            AlchemyProvider.State(
-                isShowDialog = this.isShowDialog,
-                isLoading = this.isLoading,
-                alchemyInsertSlotDescription = this.alchemyInsertSlotDescription,
-                selectedAlchemyStage = this.selectedAlchemyStage,
-                isDropdownOpen = false,
-            )
-        }
-    }
-
 
 }

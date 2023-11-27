@@ -4,11 +4,11 @@ import androidx.compose.runtime.State
 import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 
+interface ScreenEvent
+
 interface ViewState
 
-interface ViewEvent
-
-abstract class BaseViewModel<Event : ViewEvent, UiState : ViewState> :
+abstract class BaseViewModel<Event : ScreenEvent,  UiState : ViewState> :
     ViewModel() {
 
     private val initialState: UiState by lazy { setInitialState() }
@@ -22,5 +22,5 @@ abstract class BaseViewModel<Event : ViewEvent, UiState : ViewState> :
         val newState = viewState.value.reducer()
         _viewState.value = newState
     }
-
+    abstract fun sendUiEvent(event: UiEvent)
 }

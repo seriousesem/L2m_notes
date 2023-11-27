@@ -40,6 +40,7 @@ fun HomeScreen(
         context.findActivity()?.finish()
     })
     AppScaffold(
+        topBar = {},
         bottomBar = {}
     ) {
         Column(

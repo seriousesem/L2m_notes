@@ -7,14 +7,30 @@
     <string name="close">Close</string>
 
     <string name="alchemy">Alchemy</string>
-    <string name="simply_alchemy">"Simply alchemy"</string>
-    <string name="higher_alchemy">"Higher alchemy"</string>
-    <string name="stage_of_alchemy">Stage of alchemy</string>
-    <string name="alchemy_insert_combination_title">Combinations of items for alchemy</string>
-    <string name="alchemy_result_combination_title">Combinations of possible rewards</string>
-    <string name="any_rare_item">Any rare item (blue)</string>
-    <string name="any_upgraded_item">Any upgraded item (greens)</string>
+    <string name="normal_alchemy">"Normal alchemy"</string>
+    <string name="top_alchemy">"Top alchemy"</string>
+    <string name="stage_of_alchemy">Stage of alchemy: </string>
+    <string name="alchemy_result_combination_title">Alchemy Results</string>
+    <string name="any_rare_item">Any rare item</string>
+    <string name="any_heroic_item">Any heroic item</string>
+    <string name="any_upgraded_item">Any upgraded item</string>
     <string name="empty_slot">Empty slot</string>
+    <string name="rare_1_0">Rare item +1 with safe enchant 0 (jewelry, symbol, giant weapon)</string>
+    <string name="rare_2_0">Rare item +2 with safe enchant 0 (jewelry, symbol, giant weapon)</string>
+    <string name="rare_3_0">Rare item +3 with safe enchant 0 (jewelry, symbol, giant weapon)</string>
+    <string name="rare_5_0">Rare item +5 with safe enchant 0 (jewelry, symbol, giant weapon)</string>
+    <string name="rare_6_6">Rare +6 armor with safe enchant 6</string>
+    <string name="rare_8_6">Rare +8 armor with safe enchant 6</string>
+    <string name="rare_7_w">Rare weapon +7 with safe enchant 6</string>
+    <string name="rare_5_4">Rare armor +5 with safe enchant 4</string>
+    <string name="rare_6_4">Rare armor +6 with safe enchant 4</string>
+    <string name="rare_7_4">Rare armor +7 with safe enchant 4</string>
+    <string name="heroic_8_w">Heroic weapon +8 with safe enchant 6</string>
+    <string name="heroic_7_4">Heroic armor +7 with safe enchant 4</string>
+    <string name="heroic_3_0">Heroic item +3 with safe enchant 0 (jewelry, symbol, giant weapon)</string>
+    <string name="heroic_4_0">Heroic item +4 with safe enchant 0 (jewelry, symbol, giant weapon)</string>
+    <string name="heroic_5_0">Heroic item +5 with safe enchant 0 (jewelry, symbol, giant weapon)</string>
+    <string name="heroic_6_0">Heroic item +6 with safe enchant 0 (jewelry, symbol, giant weapon)</string>
 
     <string name="ad_mod_banner_id" translatable="false"> </string>
     <string name="interstitial_ad_unit_id" translatable="false"> </string>

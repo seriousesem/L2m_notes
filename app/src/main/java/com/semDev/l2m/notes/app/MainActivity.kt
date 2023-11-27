@@ -6,7 +6,6 @@ import androidx.activity.compose.setContent
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
-import com.semDev.l2m.notes.presentation.navigation.AlchemyNavGraph
 import com.semDev.l2m.notes.presentation.navigation.HomeNavGraph
 import com.semDev.l2m.notes.presentation.theme.L2mNotesTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -29,7 +28,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun GreetingPreview() {
     L2mNotesTheme {
-        AlchemyNavGraph(
+        HomeNavGraph(
             navHostController = rememberNavController()
         )
     }

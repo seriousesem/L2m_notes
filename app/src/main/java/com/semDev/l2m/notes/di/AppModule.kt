@@ -1,7 +1,9 @@
 package com.semDev.l2m.notes.di
 import android.content.Context
+import com.semDev.l2m.notes.data.alchemy.repository.AlchemyRepositoryImpl
 import com.semDev.l2m.notes.data.storage.BaseLocalStorage
 import com.semDev.l2m.notes.data.storage.LocalStorage
+import com.semDev.l2m.notes.domain.alchemy.repository.AlchemyRepository
 import com.semDev.l2m.notes.presentation.components.AdMobInterstitial
 import dagger.Module
 import dagger.Provides
@@ -26,21 +28,11 @@ object AppModule {
     ): AdMobInterstitial = AdMobInterstitial(context)
 
 
-//    @Provides
-//    @Singleton
-//    fun provideClassScheduleRepository(
-//        service: RetrofitService?,
-//        jsoupParser: JsoupParser,
-//        storage: com.semDev.l2m.notes.data.storage.LocalStorage,
-//        classScheduleDao: ClassScheduleDao,
-//        responseHandler: ResponseHandler
-//    ): ClassScheduleRepository =
-//        ClassScheduleRepositoryImpl(
-//            service = service,
-//            jsoupParser = jsoupParser,
-//            storage = storage,
-//            classScheduleDao = classScheduleDao,
-//            responseHandler = responseHandler
-//        )
+    @Provides
+    @Singleton
+    fun provideCAlchemyRepository(
+
+    ): AlchemyRepository =
+        AlchemyRepositoryImpl()
 
 }

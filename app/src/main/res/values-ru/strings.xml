@@ -7,14 +7,29 @@
     <string name="close">Закрыть</string>
 
     <string name="alchemy">Алхимия</string>
-    <string name="simply_alchemy">Простая алхимия</string>
-    <string name="higher_alchemy">Высшая алхимия</string>
-    <string name="stage_of_alchemy">Этап алхимии</string>
-    <string name="alchemy_insert_combination_title">Комбинации предметов для алхимии</string>
-    <string name="alchemy_result_combination_title">Комбинаци возможных результатов</string>
-    <string name="any_rare_item">Любой редкий предмет (синька)</string>
-    <string name="any_upgraded_item">Любой улучшеный предмет (зелень)</string>
+    <string name="normal_alchemy">Обычная алхимия</string>
+    <string name="top_alchemy">Высшая алхимия</string>
+    <string name="stage_of_alchemy">Этап алхимии: </string>
+    <string name="alchemy_result_combination_title">Результаты алхимии</string>
+    <string name="any_rare_item">Любой редкий предмет</string>
+    <string name="any_upgraded_item">Любой улучшеный предмет</string>
     <string name="empty_slot">Пустой слот</string>
-
+    <string name="rare_1_0">Редкий предмет +1 с безопасной заточкой 0 (бижутерия, символ, оружие гиганта)</string>
+    <string name="rare_6_6">Редкий доспех +6 с безопасной заточкой 6</string>
+    <string name="rare_5_4">Редкий доспех +5 с безопасной заточкой 4</string>
+    <string name="rare_2_0">Редкий предмет +2 с безопасной заточкой 0 (бижутерия, символ, оружие гиганта)</string>
+    <string name="rare_3_0">Редкий предмет +3 с безопасной заточкой 0 (бижутерия, символ, оружие гиганта)</string>
+    <string name="rare_6_4">Редкий доспех +6 с безопасной заточкой 4</string>
+    <string name="rare_7_w">Редкое оружие +7 с безопасной заточкой 6</string>
+    <string name="rare_7_4">Редкий доспех +7 с безопасной заточкой 4</string>
+    <string name="rare_8_6">Редкий доспех +8 с безопасной заточкой 6</string>
+    <string name="rare_5_0">Редкий предмет +5 с безопасной заточкой 0 (бижутерия, символ, оружие гиганта)</string>
+    <string name="any_heroic_item">Любой героический предмет</string>
+    <string name="heroic_8_w">Героическое оружие +7 с безопасной заточкой 6</string>
+    <string name="heroic_7_4">Героический доспех +7 с безопасной заточкой 4</string>
+    <string name="heroic_3_0">Героический предмет +3 с безопасной заточкой 0 (бижутерия, символ, оружие гиганта)</string>
+    <string name="heroic_4_0">Героический предмет +4 с безопасной заточкой 0 (бижутерия, символ, оружие гиганта)</string>
+    <string name="heroic_5_0">Героический предмет +5 с безопасной заточкой 0 (бижутерия, символ, оружие гиганта)</string>
+    <string name="heroic_6_0">Героический предмет +6 с безопасной заточкой 0 (бижутерия, символ, оружие гиганта)</string>
 
 </resources>
