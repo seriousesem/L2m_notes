@@ -1,14 +1,16 @@
 package com.semDev.l2m.notes.presentation.screens.alchemy
 
+import android.content.Context
+import android.widget.Toast
 import androidx.lifecycle.viewModelScope
 import com.semDev.l2m.notes.R
 import com.semDev.l2m.notes.core.BaseViewModel
 import com.semDev.l2m.notes.core.UiEvent
-import com.semDev.l2m.notes.domain.alchemy.model.alchemy.AlchemyCombinations
 import com.semDev.l2m.notes.domain.alchemy.repository.AlchemyRepository
+import com.semDev.l2m.notes.utils.MapKeys.CONTEXT_KEY
+import com.semDev.l2m.notes.utils.MapKeys.MESSAGE_KEY
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -18,6 +20,7 @@ class AlchemyViewModel @Inject constructor(
 ) : BaseViewModel<AlchemyScreenEvent, AlchemyScreenState>() {
 
     private val _uiEvent = Channel<UiEvent>()
+
     init {
         getAlchemyCombinations(AlchemyType.NormalAlchemy())
     }
@@ -34,32 +37,6 @@ class AlchemyViewModel @Inject constructor(
 
     override fun <T> setEvent(event: AlchemyScreenEvent, data: T) {
         when (event) {
-
-            AlchemyScreenEvent.OPEN_DIALOG -> {
-                val description = data as Int
-                setState {
-                    copy(
-                        isLoading = this.isLoading,
-                        alchemyCombinations = this.alchemyCombinations,
-                        alchemyType = this.alchemyType,
-                        isShowDialog = true,
-                        combinationItemDescription = description
-                    )
-                }
-            }
-
-            AlchemyScreenEvent.CLOSE_DIALOG -> {
-                setState {
-                    copy(
-                        isLoading = this.isLoading,
-                        alchemyCombinations = this.alchemyCombinations,
-                        alchemyType = this.alchemyType,
-                        isShowDialog = false,
-                        combinationItemDescription = this.combinationItemDescription
-                    )
-                }
-            }
-
             AlchemyScreenEvent.SELECT_ALCHEMY_TYPE -> {
                 val alchemyType = data as AlchemyType
                 setState {
@@ -68,10 +45,16 @@ class AlchemyViewModel @Inject constructor(
                         alchemyCombinations = this.alchemyCombinations,
                         alchemyType = alchemyType,
                         isShowDialog = this.isShowDialog,
-                        combinationItemDescription = this.combinationItemDescription
+                        combinationItemDescription = this.combinationItemDescription,
                     )
                 }
                 getAlchemyCombinations(alchemyType)
+            }
+            AlchemyScreenEvent.SHOW_SHORT_TOAST -> {
+                val dataMap = data as Map<*, *>
+                val context = dataMap[CONTEXT_KEY] as Context
+                val message = dataMap[MESSAGE_KEY] as Int
+                Toast.makeText(context, context.getText(message), Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -90,7 +73,7 @@ class AlchemyViewModel @Inject constructor(
                     alchemyCombinations = repository.getNormalAlchemyCombinations(),
                     alchemyType = this.alchemyType,
                     isShowDialog = this.isShowDialog,
-                    combinationItemDescription = this.combinationItemDescription
+                    combinationItemDescription = this.combinationItemDescription,
                 )
             }
         } else {
@@ -100,7 +83,7 @@ class AlchemyViewModel @Inject constructor(
                     alchemyCombinations = repository.getTopAlchemyCombinations(),
                     alchemyType = this.alchemyType,
                     isShowDialog = this.isShowDialog,
-                    combinationItemDescription = this.combinationItemDescription
+                    combinationItemDescription = this.combinationItemDescription,
                 )
             }
         }

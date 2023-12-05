@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">L2m Notes</string>
+    <string name="app_name">L2M notes</string>
     <string name="error_dialog_title">Ошибка</string>
     <string name="ok">Хорошо</string>
     <string name="cancel">Отмена</string>
@@ -14,6 +14,16 @@
     <string name="any_rare_item">Любой редкий предмет</string>
     <string name="any_upgraded_item">Любой улучшеный предмет</string>
     <string name="empty_slot">Пустой слот</string>
+
+    <string name="common_upgrade_rare_item">Обычный или улучшенный или редкий предмет</string>
+    <string name="rune_or_rare_8_6_item">Руна или редкий доспех +8 с безопасной заточкой 6</string>
+    <string name="heroic_item">Героический предмет</string>
+    <string name="legendary_item">Легендарный предмет</string>
+    <string name="original_stone_item">Первородный камень или улучшенный или редкий предмет</string>
+    <string name="gracia_magic_stone_item">Магический камень Грации или улучшенный или редкий предмет</string>
+    <string name="pendant_enchant_item">Заточка для кулона или редкий предмет</string>
+    <string name="pendant_stone_item">Камень в кулон или редкий или героический предмет</string>
+
     <string name="rare_1_0">Редкий предмет +1 с безопасной заточкой 0 (бижутерия, символ, оружие гиганта)</string>
     <string name="rare_6_6">Редкий доспех +6 с безопасной заточкой 6</string>
     <string name="rare_5_4">Редкий доспех +5 с безопасной заточкой 4</string>

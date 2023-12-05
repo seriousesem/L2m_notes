@@ -18,7 +18,7 @@ fun HomeNavGraph(navHostController: NavHostController) {
             HomeScreen(navHostController = navHostController)
         }
         composable(route = Screens.AlchemyScreen.route) {
-            AlchemyScreen()
+            AlchemyScreen(navHostController = navHostController)
         }
     }
 }

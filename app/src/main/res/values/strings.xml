@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">L2m Notes</string>
+    <string name="app_name">L2M notes</string>
     <string name="error_dialog_title">Error</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
@@ -15,6 +15,16 @@
     <string name="any_heroic_item">Any heroic item</string>
     <string name="any_upgraded_item">Any upgraded item</string>
     <string name="empty_slot">Empty slot</string>
+
+    <string name="common_upgrade_rare_item">Common or upgraded or rare item</string>
+    <string name="rune_or_rare_8_6_item">Rune or rare +8 armor with safe enchant 6</string>
+    <string name="heroic_item">Heroic item</string>
+    <string name="legendary_item">Legendary item</string>
+    <string name="original_stone_item">Original stone or rare item</string>
+    <string name="gracia_magic_stone_item">Gracia magic stone or upgraded or rare item</string>
+    <string name="pendant_enchant_item">Pendant enchant or rare item</string>
+    <string name="pendant_stone_item">Pendant stone or rare or epic item</string>
+
     <string name="rare_1_0">Rare item +1 with safe enchant 0 (jewelry, symbol, giant weapon)</string>
     <string name="rare_2_0">Rare item +2 with safe enchant 0 (jewelry, symbol, giant weapon)</string>
     <string name="rare_3_0">Rare item +3 with safe enchant 0 (jewelry, symbol, giant weapon)</string>
