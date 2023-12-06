@@ -6,11 +6,13 @@
     <string name="cancel">Cancel</string>
     <string name="close">Close</string>
 
-    <string name="alchemy">Alchemy</string>
-    <string name="normal_alchemy">"Normal alchemy"</string>
-    <string name="top_alchemy">"Top alchemy"</string>
+    <string name="home_screen_title">Home screen</string>
+    <string name="normal_alchemy_screen_title">Normal alchemy</string>
+    <string name="top_alchemy_screen_title">Top alchemy</string>
+
+    <string name="alchemy_combinations">Alchemy combinations</string>
     <string name="stage_of_alchemy">Stage of alchemy: </string>
-    <string name="alchemy_result_combination_title">Alchemy Results</string>
+    <string name="alchemy_result_combination_title">Alchemy result</string>
     <string name="any_rare_item">Any rare item</string>
     <string name="any_heroic_item">Any heroic item</string>
     <string name="any_upgraded_item">Any upgraded item</string>

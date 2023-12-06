@@ -2,11 +2,11 @@ package com.semDev.l2m.notes.data.alchemy.repository
 
 import androidx.compose.ui.graphics.Color
 import com.semDev.l2m.notes.R
-import com.semDev.l2m.notes.domain.alchemy.model.alchemy.AlchemyCombinations
-import com.semDev.l2m.notes.domain.alchemy.model.alchemy.AlchemyCombinationItem
-import com.semDev.l2m.notes.domain.alchemy.model.alchemy.AlchemyResult
-import com.semDev.l2m.notes.domain.alchemy.model.alchemy.AlchemyResultItem
-import com.semDev.l2m.notes.domain.alchemy.repository.AlchemyRepository
+import com.semDev.l2m.notes.domain.alchemy.model.alchemy_combinations.AlchemyCombinations
+import com.semDev.l2m.notes.domain.alchemy.model.alchemy_combinations.AlchemyCombinationItem
+import com.semDev.l2m.notes.domain.alchemy.model.alchemy_combinations.AlchemyResult
+import com.semDev.l2m.notes.domain.alchemy.model.alchemy_combinations.AlchemyResultItem
+import com.semDev.l2m.notes.domain.alchemy.repository.AlchemyCombinationsRepository
 import com.semDev.l2m.notes.presentation.theme.Blue
 import com.semDev.l2m.notes.utils.ImageAssets.GRACIA_MAGIC_STONE_ITEM
 import com.semDev.l2m.notes.utils.ImageAssets.HEROIC_ITEM
@@ -16,7 +16,7 @@ import com.semDev.l2m.notes.utils.ImageAssets.PENDANT_ENCHANT_ITEM
 import com.semDev.l2m.notes.utils.ImageAssets.PENDANT_STONE_ITEM
 import com.semDev.l2m.notes.utils.ImageAssets.RARE_ITEM
 
-class AlchemyRepositoryImpl : AlchemyRepository {
+class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
     override fun getNormalAlchemyCombinations(): List<AlchemyCombinations> {
         return listOf(
             AlchemyCombinations(

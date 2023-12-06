@@ -1,4 +1,4 @@
-package com.semDev.l2m.notes.presentation.screens.alchemy
+package com.semDev.l2m.notes.presentation.screens.alchemy_combinations
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.BorderStroke
@@ -31,6 +31,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Color.Companion.DarkGray
+import androidx.compose.ui.graphics.Color.Companion.LightGray
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -40,11 +42,10 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
-import androidx.navigation.compose.rememberNavController
 import com.semDev.l2m.notes.R
-import com.semDev.l2m.notes.domain.alchemy.model.alchemy.AlchemyCombinations
-import com.semDev.l2m.notes.domain.alchemy.model.alchemy.AlchemyCombinationItem
-import com.semDev.l2m.notes.domain.alchemy.model.alchemy.AlchemyResultItem
+import com.semDev.l2m.notes.domain.alchemy.model.alchemy_combinations.AlchemyCombinations
+import com.semDev.l2m.notes.domain.alchemy.model.alchemy_combinations.AlchemyCombinationItem
+import com.semDev.l2m.notes.domain.alchemy.model.alchemy_combinations.AlchemyResultItem
 import com.semDev.l2m.notes.presentation.components.AppScaffold
 import com.semDev.l2m.notes.presentation.components.BackIconButton
 import com.semDev.l2m.notes.presentation.components.HorizontalDivider
@@ -58,9 +59,9 @@ import com.semDev.l2m.notes.utils.MapKeys.MESSAGE_KEY
 
 
 @Composable
-fun AlchemyScreen(
+fun AlchemyCombinationsScreen(
     navHostController: NavHostController,
-    viewModel: AlchemyViewModel = hiltViewModel()
+    viewModel: AlchemyCombinationsViewModel = hiltViewModel()
 ) {
     val context = LocalContext.current
     BackHandler(onBack = {
@@ -70,7 +71,7 @@ fun AlchemyScreen(
     AppScaffold(
         topBar = {
             TopBar(
-                title = "",
+                title = stringResource(id = state.alchemyType.description),
                 navigationIcon = {
                     BackIconButton(navController = navHostController)
                 },
@@ -86,7 +87,7 @@ fun AlchemyScreen(
                 selectedAlchemyType = state.alchemyType,
                 action = { alchemyType ->
                     viewModel.setEvent(
-                        event = AlchemyScreenEvent.SELECT_ALCHEMY_TYPE,
+                        event = AlchemyCombinationsScreenEvent.SELECT_ALCHEMY_TYPE,
                         data = alchemyType
                     )
                 }
@@ -100,7 +101,7 @@ fun AlchemyScreen(
                 alchemyCombinationsList = state.alchemyCombinations,
                 showShortToast = { message ->
                     viewModel.setEvent(
-                        event = AlchemyScreenEvent.SHOW_SHORT_TOAST,
+                        event = AlchemyCombinationsScreenEvent.SHOW_SHORT_TOAST,
                         data = mapOf(
                             CONTEXT_KEY to context,
                             MESSAGE_KEY to message
@@ -146,7 +147,7 @@ private fun AlchemyCombinationCard(
         modifier = Modifier
             .padding(vertical = 16.dp, horizontal = 8.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color.Black.copy(alpha = 0.3f)
+            containerColor = Color.Black.copy(alpha = 0.6f)
         )
     ) {
         Column(
@@ -159,7 +160,7 @@ private fun AlchemyCombinationCard(
                 modifier = Modifier.padding(vertical = 8.dp),
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold,
-                color = Color.DarkGray
+                color = LightGray
 
             )
             for (combinationItems in alchemyCombinations.combinationItems) {
@@ -186,7 +187,7 @@ private fun AlchemyCombinationCard(
                 modifier = Modifier.padding(vertical = 16.dp),
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold,
-                color = Color.DarkGray
+                color = LightGray
 
             )
             AlchemyResultView(
@@ -212,8 +213,12 @@ private fun AlchemyCombinationItem(
         contentPadding = PaddingValues(0.dp),
         colors = ButtonDefaults.outlinedButtonColors(
             backgroundColor = alchemyCombinationItem.slotColor,
-            contentColor = Color.DarkGray
+            contentColor = DarkGray,
         ),
+        border = BorderStroke(
+            width = 1.dp,
+            color = DarkGray
+        )
     ) {
         Text(
             text = alchemyCombinationItem.itemEnchant,
@@ -256,7 +261,7 @@ private fun AlchemyResultItemView(
         },
         modifier = Modifier.size(48.dp),
         shape = CutCornerShape(16.dp),
-        border = BorderStroke(1.dp, Color.LightGray),
+        border = BorderStroke(1.dp, DarkGray),
         contentPadding = PaddingValues(0.dp),
         colors = ButtonDefaults.outlinedButtonColors(backgroundColor = Color.LightGray)
     ) {
@@ -265,7 +270,7 @@ private fun AlchemyResultItemView(
                 painter = painterResource(id = alchemyResultItem.imageAssets),
                 contentDescription = null,
                 modifier = Modifier
-                    .size(48.dp)
+                    .size(42.dp)
             )
         }
     }
@@ -281,7 +286,10 @@ fun BottomBar(
         AlchemyType.TopAlchemy()
     )
 
-    BottomNavigation {
+    BottomNavigation(
+        backgroundColor = DarkGray,
+        contentColor = LightGray
+    ) {
         alchemyTypes.forEach { currentAlchemyType ->
             BottomBar(
                 selectedAlchemyType = selectedAlchemyType,

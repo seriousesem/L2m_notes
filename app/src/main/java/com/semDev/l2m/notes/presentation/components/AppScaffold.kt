@@ -10,8 +10,7 @@ import androidx.compose.ui.graphics.Color
 
 @Composable
 fun AppScaffold(
-    modifier: Modifier = Modifier
-        .fillMaxSize(),
+    modifier: Modifier = Modifier,
     topBar: @Composable (() -> Unit),
     bottomBar: @Composable (() -> Unit),
     content: @Composable (PaddingValues) -> Unit,
@@ -21,6 +20,6 @@ fun AppScaffold(
         topBar = topBar,
         bottomBar = bottomBar,
         content = content,
-        containerColor = Color.Transparent,
+        containerColor = Color.LightGray,
     )
 }

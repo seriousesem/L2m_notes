@@ -76,6 +76,7 @@ dependencies {
     implementation ("com.google.accompanist:accompanist-permissions:0.31.0-alpha")
     implementation ("androidx.work:work-runtime-ktx:2.9.0")
     implementation("androidx.compose.material:material-icons-extended:1.6.0-beta02")
+    implementation("androidx.core:core-splashscreen:1.0.1")
     // Hilt
     implementation("com.google.dagger:hilt-android:2.48")
     kapt("com.google.dagger:hilt-compiler:2.48")

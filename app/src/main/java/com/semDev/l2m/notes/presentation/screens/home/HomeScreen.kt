@@ -1,17 +1,14 @@
 package com.semDev.l2m.notes.presentation.screens.home
 
 import androidx.activity.compose.BackHandler
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Icon
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AssuredWorkload
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
@@ -27,6 +24,9 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.semDev.l2m.notes.R
 import com.semDev.l2m.notes.presentation.components.AppScaffold
+import com.semDev.l2m.notes.presentation.components.BackIconButton
+import com.semDev.l2m.notes.presentation.components.LanguageIconButton
+import com.semDev.l2m.notes.presentation.components.TopBar
 import com.semDev.l2m.notes.presentation.navigation.Screens
 import com.semDev.l2m.notes.utils.findActivity
 
@@ -40,31 +40,50 @@ fun HomeScreen(
         context.findActivity()?.finish()
     })
     AppScaffold(
-        topBar = {},
+        topBar = {
+            TopBar(
+                title = stringResource(id = R.string.home_screen_title),
+                navigationIcon = {
+                },
+                actionIcon = {
+                    LanguageIconButton(
+                        action = {}
+                    )
+                }
+            )
+        },
         bottomBar = {}
-    ) {
+    ) { contentPadding ->
         Column(
-            modifier = Modifier.padding(8.dp),
+            modifier = Modifier
+                .padding(
+                top = contentPadding.calculateTopPadding(),
+            )
+                .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
-            verticalArrangement = Arrangement.Center
         ) {
-            ElevatedCard(
+            Card(
                 onClick = {
-                    navHostController.navigate(Screens.AlchemyScreen.route)
+                    navHostController.navigate(Screens.AlchemyCombinationsScreen.route)
                 },
                 modifier = Modifier
-                    .height(120.dp)
+                    .height(160.dp)
+                    .padding(vertical = 16.dp, horizontal = 8.dp),
+                colors = CardDefaults.cardColors(
+                    containerColor = Color.Black.copy(alpha = 0.6f)
+                )
             ) {
-                Row (
+                Row(
                     modifier = Modifier
                         .fillMaxSize(),
                     verticalAlignment = Alignment.CenterVertically,
                     horizontalArrangement = Arrangement.Center
-                ){
+                ) {
                     Text(
-                        text = stringResource(id = R.string.alchemy),
-                        fontSize = 28.sp,
-                        fontWeight = FontWeight.Bold
+                        text = stringResource(id = R.string.alchemy_combinations),
+                        fontSize = 24.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = Color.LightGray
                     )
                 }
             }

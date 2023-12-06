@@ -1,12 +1,11 @@
-package com.semDev.l2m.notes.presentation.screens.alchemy
+package com.semDev.l2m.notes.presentation.screens.alchemy_combinations
 
 import android.content.Context
 import android.widget.Toast
 import androidx.lifecycle.viewModelScope
-import com.semDev.l2m.notes.R
 import com.semDev.l2m.notes.core.BaseViewModel
 import com.semDev.l2m.notes.core.UiEvent
-import com.semDev.l2m.notes.domain.alchemy.repository.AlchemyRepository
+import com.semDev.l2m.notes.domain.alchemy.repository.AlchemyCombinationsRepository
 import com.semDev.l2m.notes.utils.MapKeys.CONTEXT_KEY
 import com.semDev.l2m.notes.utils.MapKeys.MESSAGE_KEY
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -15,9 +14,9 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class AlchemyViewModel @Inject constructor(
-    private val repository: AlchemyRepository
-) : BaseViewModel<AlchemyScreenEvent, AlchemyScreenState>() {
+class AlchemyCombinationsViewModel @Inject constructor(
+    private val repository: AlchemyCombinationsRepository
+) : BaseViewModel<AlchemyCombinationsScreenEvent, AlchemyCombinationsScreenState>() {
 
     private val _uiEvent = Channel<UiEvent>()
 
@@ -25,32 +24,28 @@ class AlchemyViewModel @Inject constructor(
         getAlchemyCombinations(AlchemyType.NormalAlchemy())
     }
 
-    override fun setInitialState(): AlchemyScreenState {
-        return AlchemyScreenState(
+    override fun setInitialState(): AlchemyCombinationsScreenState {
+        return AlchemyCombinationsScreenState(
             isLoading = true,
             alchemyCombinations = listOf(),
             alchemyType = AlchemyType.NormalAlchemy(),
-            isShowDialog = false,
-            combinationItemDescription = R.string.empty_slot,
         )
     }
 
-    override fun <T> setEvent(event: AlchemyScreenEvent, data: T) {
+    override fun <T> setEvent(event: AlchemyCombinationsScreenEvent, data: T) {
         when (event) {
-            AlchemyScreenEvent.SELECT_ALCHEMY_TYPE -> {
+            AlchemyCombinationsScreenEvent.SELECT_ALCHEMY_TYPE -> {
                 val alchemyType = data as AlchemyType
                 setState {
                     copy(
                         isLoading = true,
                         alchemyCombinations = this.alchemyCombinations,
                         alchemyType = alchemyType,
-                        isShowDialog = this.isShowDialog,
-                        combinationItemDescription = this.combinationItemDescription,
                     )
                 }
                 getAlchemyCombinations(alchemyType)
             }
-            AlchemyScreenEvent.SHOW_SHORT_TOAST -> {
+            AlchemyCombinationsScreenEvent.SHOW_SHORT_TOAST -> {
                 val dataMap = data as Map<*, *>
                 val context = dataMap[CONTEXT_KEY] as Context
                 val message = dataMap[MESSAGE_KEY] as Int
@@ -72,8 +67,6 @@ class AlchemyViewModel @Inject constructor(
                     isLoading = false,
                     alchemyCombinations = repository.getNormalAlchemyCombinations(),
                     alchemyType = this.alchemyType,
-                    isShowDialog = this.isShowDialog,
-                    combinationItemDescription = this.combinationItemDescription,
                 )
             }
         } else {
@@ -82,8 +75,6 @@ class AlchemyViewModel @Inject constructor(
                     isLoading = false,
                     alchemyCombinations = repository.getTopAlchemyCombinations(),
                     alchemyType = this.alchemyType,
-                    isShowDialog = this.isShowDialog,
-                    combinationItemDescription = this.combinationItemDescription,
                 )
             }
         }

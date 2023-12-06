@@ -6,11 +6,14 @@
     <string name="cancel">Отмена</string>
     <string name="close">Закрыть</string>
 
-    <string name="alchemy">Алхимия</string>
-    <string name="normal_alchemy">Обычная алхимия</string>
-    <string name="top_alchemy">Высшая алхимия</string>
+    <string name="home_screen_title">Домашний экран</string>
+    <string name="normal_alchemy_screen_title">Обычная алхимия</string>
+    <string name="top_alchemy_screen_title">Высшая алхимия</string>
+
+    <string name="alchemy_combinations">Комбинации алхимии</string>
     <string name="stage_of_alchemy">Этап алхимии: </string>
-    <string name="alchemy_result_combination_title">Результаты алхимии</string>
+    <string name="alchemy_result_combination_title">Результат алхимии</string>
+
     <string name="any_rare_item">Любой редкий предмет</string>
     <string name="any_upgraded_item">Любой улучшеный предмет</string>
     <string name="empty_slot">Пустой слот</string>

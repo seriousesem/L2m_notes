@@ -4,7 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.semDev.l2m.notes.presentation.screens.alchemy.AlchemyScreen
+import com.semDev.l2m.notes.presentation.screens.alchemy_combinations.AlchemyCombinationsScreen
 import com.semDev.l2m.notes.presentation.screens.home.HomeScreen
 
 @Composable
@@ -17,8 +17,8 @@ fun HomeNavGraph(navHostController: NavHostController) {
         composable(route = Screens.HomeScreen.route) {
             HomeScreen(navHostController = navHostController)
         }
-        composable(route = Screens.AlchemyScreen.route) {
-            AlchemyScreen(navHostController = navHostController)
+        composable(route = Screens.AlchemyCombinationsScreen.route) {
+            AlchemyCombinationsScreen(navHostController = navHostController)
         }
     }
 }
@@ -29,8 +29,8 @@ sealed class Screens (
     object HomeScreen : Screens(
         route = "HomeScreen"
     )
-    object AlchemyScreen : Screens(
-        route = "AlchemyScreen"
+    object AlchemyCombinationsScreen : Screens(
+        route = "AlchemyCombinationsScreen"
     )
 }
 
