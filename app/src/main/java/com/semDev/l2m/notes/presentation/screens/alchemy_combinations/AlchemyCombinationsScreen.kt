@@ -37,6 +37,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -295,7 +296,6 @@ fun BottomBar(
                 selectedAlchemyType = selectedAlchemyType,
                 currentAlchemyType = currentAlchemyType,
                 description = currentAlchemyType.description,
-                icon = currentAlchemyType.icon,
                 action = action,
             )
         }
@@ -307,7 +307,6 @@ fun RowScope.BottomBar(
     selectedAlchemyType: AlchemyType,
     currentAlchemyType: AlchemyType,
     description: Int,
-    icon: ImageVector,
     action: (AlchemyType) -> Unit
 ) {
     BottomNavigationItem(
@@ -316,7 +315,7 @@ fun RowScope.BottomBar(
         },
         icon = {
             Icon(
-                imageVector = icon,
+                imageVector = ImageVector.vectorResource(id = R.drawable.alchemy_ic),
                 contentDescription = null
             )
         },

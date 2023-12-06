@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.ElevatedCard
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -24,9 +23,9 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.semDev.l2m.notes.R
 import com.semDev.l2m.notes.presentation.components.AppScaffold
-import com.semDev.l2m.notes.presentation.components.BackIconButton
 import com.semDev.l2m.notes.presentation.components.LanguageIconButton
 import com.semDev.l2m.notes.presentation.components.TopBar
+import com.semDev.l2m.notes.presentation.components.VerticalSpacing
 import com.semDev.l2m.notes.presentation.navigation.Screens
 import com.semDev.l2m.notes.utils.findActivity
 
@@ -57,36 +56,56 @@ fun HomeScreen(
         Column(
             modifier = Modifier
                 .padding(
-                top = contentPadding.calculateTopPadding(),
-            )
+                    top = contentPadding.calculateTopPadding(),
+                )
                 .fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
-            Card(
-                onClick = {
-                    navHostController.navigate(Screens.AlchemyCombinationsScreen.route)
-                },
-                modifier = Modifier
-                    .height(160.dp)
-                    .padding(vertical = 16.dp, horizontal = 8.dp),
-                colors = CardDefaults.cardColors(
-                    containerColor = Color.Black.copy(alpha = 0.6f)
-                )
-            ) {
-                Row(
-                    modifier = Modifier
-                        .fillMaxSize(),
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Center
-                ) {
-                    Text(
-                        text = stringResource(id = R.string.alchemy_combinations),
-                        fontSize = 24.sp,
-                        fontWeight = FontWeight.Bold,
-                        color = Color.LightGray
-                    )
-                }
-            }
+            MenuItemView(
+                navHostController = navHostController,
+                route = Screens.AlchemyCombinations.route,
+                description = R.string.alchemy_combinations_title
+            )
+            VerticalSpacing(spacing = 8)
+            MenuItemView(
+                navHostController = navHostController,
+                route = Screens.AlchemyStatistics.route,
+                description = R.string.alchemy_statistics_screen_title
+            )
+        }
+    }
+}
+
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+private fun MenuItemView(
+    navHostController: NavHostController,
+    route: String,
+    description: Int
+){
+    Card(
+        onClick = {
+            navHostController.navigate(route)
+        },
+        modifier = Modifier
+            .height(160.dp)
+            .padding(vertical = 16.dp, horizontal = 8.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = Color.Black.copy(alpha = 0.6f)
+        )
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxSize(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center
+        ) {
+            Text(
+                text = stringResource(id = description),
+                fontSize = 24.sp,
+                fontWeight = FontWeight.Bold,
+                color = Color.LightGray
+            )
         }
     }
 }

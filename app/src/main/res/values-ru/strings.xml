@@ -7,10 +7,11 @@
     <string name="close">Закрыть</string>
 
     <string name="home_screen_title">Домашний экран</string>
+    <string name="alchemy_combinations_title">Комбинации алхимии</string>
+    <string name="alchemy_statistics_screen_title">Статистика алхимии</string>
     <string name="normal_alchemy_screen_title">Обычная алхимия</string>
     <string name="top_alchemy_screen_title">Высшая алхимия</string>
 
-    <string name="alchemy_combinations">Комбинации алхимии</string>
     <string name="stage_of_alchemy">Этап алхимии: </string>
     <string name="alchemy_result_combination_title">Результат алхимии</string>
 

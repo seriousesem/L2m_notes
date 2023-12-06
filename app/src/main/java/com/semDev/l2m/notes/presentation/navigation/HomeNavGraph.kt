@@ -5,6 +5,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.semDev.l2m.notes.presentation.screens.alchemy_combinations.AlchemyCombinationsScreen
+import com.semDev.l2m.notes.presentation.screens.alchemy_statistics.AlchemyStatisticsScreen
 import com.semDev.l2m.notes.presentation.screens.home.HomeScreen
 
 @Composable
@@ -12,13 +13,16 @@ fun HomeNavGraph(navHostController: NavHostController) {
 
     NavHost(
         navController = navHostController,
-        startDestination = Screens.HomeScreen.route
+        startDestination = Screens.Home.route
     ) {
-        composable(route = Screens.HomeScreen.route) {
+        composable(route = Screens.Home.route) {
             HomeScreen(navHostController = navHostController)
         }
-        composable(route = Screens.AlchemyCombinationsScreen.route) {
+        composable(route = Screens.AlchemyCombinations.route) {
             AlchemyCombinationsScreen(navHostController = navHostController)
+        }
+        composable(route = Screens.AlchemyStatistics.route) {
+            AlchemyStatisticsScreen(navHostController = navHostController)
         }
     }
 }
@@ -26,11 +30,14 @@ fun HomeNavGraph(navHostController: NavHostController) {
 sealed class Screens (
     val route: String
 ){
-    object HomeScreen : Screens(
-        route = "HomeScreen"
+    object Home : Screens(
+        route = "Home"
     )
-    object AlchemyCombinationsScreen : Screens(
-        route = "AlchemyCombinationsScreen"
+    object AlchemyCombinations : Screens(
+        route = "AlchemyCombinations"
+    )
+    object AlchemyStatistics : Screens(
+        route = "AlchemyStatistics"
     )
 }
 
