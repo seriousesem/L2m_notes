@@ -3,6 +3,7 @@ package com.semDev.l2m.notes.presentation.screens.home
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -27,9 +28,9 @@ import com.semDev.l2m.notes.presentation.components.LanguageIconButton
 import com.semDev.l2m.notes.presentation.components.TopBar
 import com.semDev.l2m.notes.presentation.components.VerticalSpacing
 import com.semDev.l2m.notes.presentation.navigation.Screens
+import com.semDev.l2m.notes.presentation.theme.Grey700
 import com.semDev.l2m.notes.utils.findActivity
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeScreen(
     navHostController: NavHostController
@@ -53,26 +54,37 @@ fun HomeScreen(
         },
         bottomBar = {}
     ) { contentPadding ->
-        Column(
-            modifier = Modifier
-                .padding(
-                    top = contentPadding.calculateTopPadding(),
-                )
-                .fillMaxSize(),
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
-            MenuItemView(
-                navHostController = navHostController,
-                route = Screens.AlchemyCombinations.route,
-                description = R.string.alchemy_combinations_title
+        HomeScreenView(
+            contentPadding = contentPadding,
+            navHostController = navHostController
+        )
+    }
+}
+
+@Composable
+private fun HomeScreenView(
+    contentPadding: PaddingValues,
+    navHostController: NavHostController
+) {
+    Column(
+        modifier = Modifier
+            .padding(
+                top = contentPadding.calculateTopPadding(),
             )
-            VerticalSpacing(spacing = 8)
-            MenuItemView(
-                navHostController = navHostController,
-                route = Screens.AlchemyStatistics.route,
-                description = R.string.alchemy_statistics_screen_title
-            )
-        }
+            .fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally,
+    ) {
+        MenuItemView(
+            navHostController = navHostController,
+            route = Screens.AlchemyCombinations.route,
+            description = R.string.alchemy_combinations_title
+        )
+        VerticalSpacing(spacing = 8)
+        MenuItemView(
+            navHostController = navHostController,
+            route = Screens.AlchemyStatistics.route,
+            description = R.string.alchemy_statistics_screen_title
+        )
     }
 }
 
@@ -82,7 +94,7 @@ private fun MenuItemView(
     navHostController: NavHostController,
     route: String,
     description: Int
-){
+) {
     Card(
         onClick = {
             navHostController.navigate(route)

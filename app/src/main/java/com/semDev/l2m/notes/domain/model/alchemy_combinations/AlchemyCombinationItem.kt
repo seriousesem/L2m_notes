@@ -1,4 +1,4 @@
-package com.semDev.l2m.notes.domain.alchemy.model.alchemy_combinations
+package com.semDev.l2m.notes.domain.model.alchemy_combinations
 
 import androidx.compose.ui.graphics.Color
 

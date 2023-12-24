@@ -2,15 +2,11 @@ package com.semDev.l2m.notes.presentation.screens.alchemy_combinations
 
 import android.content.Context
 import android.widget.Toast
-import androidx.lifecycle.viewModelScope
 import com.semDev.l2m.notes.core.BaseViewModel
-import com.semDev.l2m.notes.core.UiEvent
-import com.semDev.l2m.notes.domain.alchemy.repository.AlchemyCombinationsRepository
+import com.semDev.l2m.notes.domain.repository.AlchemyCombinationsRepository
 import com.semDev.l2m.notes.utils.MapKeys.CONTEXT_KEY
 import com.semDev.l2m.notes.utils.MapKeys.MESSAGE_KEY
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.channels.Channel
-import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
@@ -18,9 +14,7 @@ class AlchemyCombinationsViewModel @Inject constructor(
     private val repository: AlchemyCombinationsRepository
 ) : BaseViewModel<AlchemyCombinationsScreenEvent, AlchemyCombinationsScreenState>() {
 
-    private val _uiEvent = Channel<UiEvent>()
-
-    init {
+   init {
         getAlchemyCombinations(AlchemyType.NormalAlchemy())
     }
 
@@ -53,13 +47,6 @@ class AlchemyCombinationsViewModel @Inject constructor(
             }
         }
     }
-
-    override fun sendUiEvent(event: UiEvent) {
-        viewModelScope.launch {
-            _uiEvent.send(event)
-        }
-    }
-
     private fun getAlchemyCombinations(alchemyType: AlchemyType) {
         if (alchemyType == AlchemyType.NormalAlchemy()) {
             setState {

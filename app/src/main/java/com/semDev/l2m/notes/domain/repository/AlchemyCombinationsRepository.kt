@@ -1,6 +1,6 @@
-package com.semDev.l2m.notes.domain.alchemy.repository
+package com.semDev.l2m.notes.domain.repository
 
-import com.semDev.l2m.notes.domain.alchemy.model.alchemy_combinations.AlchemyCombinations
+import com.semDev.l2m.notes.domain.model.alchemy_combinations.AlchemyCombinations
 
 interface AlchemyCombinationsRepository {
     fun getNormalAlchemyCombinations(): List<AlchemyCombinations>

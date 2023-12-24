@@ -1,9 +1,13 @@
 package com.semDev.l2m.notes.di
+
 import android.content.Context
-import com.semDev.l2m.notes.data.alchemy.repository.AlchemyCombinationsRepositoryImpl
+import com.semDev.l2m.notes.data.repository.AlchemyCombinationsRepositoryImpl
+import com.semDev.l2m.notes.data.repository.AlchemyStatisticsRepositoryImpl
+import com.semDev.l2m.notes.data.room.dao.AlchemyStatisticsDao
 import com.semDev.l2m.notes.data.storage.BaseLocalStorage
 import com.semDev.l2m.notes.data.storage.LocalStorage
-import com.semDev.l2m.notes.domain.alchemy.repository.AlchemyCombinationsRepository
+import com.semDev.l2m.notes.domain.repository.AlchemyCombinationsRepository
+import com.semDev.l2m.notes.domain.repository.AlchemyStatisticsRepository
 import com.semDev.l2m.notes.presentation.components.AdMobInterstitial
 import dagger.Module
 import dagger.Provides
@@ -30,9 +34,17 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideCAlchemyRepository(
-
+    fun provideAlchemyCombinationsRepository(
     ): AlchemyCombinationsRepository =
         AlchemyCombinationsRepositoryImpl()
+
+    @Provides
+    @Singleton
+    fun provideAlchemyStatisticsRepository(
+        alchemyStatisticsDao: AlchemyStatisticsDao
+    ): AlchemyStatisticsRepository =
+        AlchemyStatisticsRepositoryImpl(
+            alchemyStatisticsDao = alchemyStatisticsDao
+        )
 
 }

@@ -1,12 +1,12 @@
-package com.semDev.l2m.notes.data.alchemy.repository
+package com.semDev.l2m.notes.data.repository
 
 import androidx.compose.ui.graphics.Color
 import com.semDev.l2m.notes.R
-import com.semDev.l2m.notes.domain.alchemy.model.alchemy_combinations.AlchemyCombinations
-import com.semDev.l2m.notes.domain.alchemy.model.alchemy_combinations.AlchemyCombinationItem
-import com.semDev.l2m.notes.domain.alchemy.model.alchemy_combinations.AlchemyResult
-import com.semDev.l2m.notes.domain.alchemy.model.alchemy_combinations.AlchemyResultItem
-import com.semDev.l2m.notes.domain.alchemy.repository.AlchemyCombinationsRepository
+import com.semDev.l2m.notes.domain.model.alchemy_combinations.AlchemyCombinations
+import com.semDev.l2m.notes.domain.model.alchemy_combinations.AlchemyCombinationItem
+import com.semDev.l2m.notes.domain.model.alchemy_combinations.AlchemyCombinationResults
+import com.semDev.l2m.notes.domain.model.alchemy_combinations.AlchemyCombinationResultItem
+import com.semDev.l2m.notes.domain.repository.AlchemyCombinationsRepository
 import com.semDev.l2m.notes.presentation.theme.Blue
 import com.semDev.l2m.notes.utils.ImageAssets.GRACIA_MAGIC_STONE_ITEM
 import com.semDev.l2m.notes.utils.ImageAssets.HEROIC_ITEM
@@ -50,25 +50,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         )
                     )
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = RARE_ITEM,
                             description = R.string.rune_or_rare_8_6_item,
                         ),
@@ -106,25 +106,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         )
                     )
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = RARE_ITEM,
                             description = R.string.rune_or_rare_8_6_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
@@ -162,25 +162,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         )
                     )
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = RARE_ITEM,
                             description = R.string.rune_or_rare_8_6_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
@@ -218,25 +218,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         ),
                     )
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = RARE_ITEM,
                             description = R.string.rune_or_rare_8_6_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -355,25 +355,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         )
                     ),
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = RARE_ITEM,
                             description = R.string.rune_or_rare_8_6_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -492,25 +492,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         ),
                     ),
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = RARE_ITEM,
                             description = R.string.rune_or_rare_8_6_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -602,25 +602,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         )
                     ),
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = RARE_ITEM,
                             description = R.string.rune_or_rare_8_6_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -712,25 +712,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         )
                     ),
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = RARE_ITEM,
                             description = R.string.rune_or_rare_8_6_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -822,25 +822,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         ),
                     ),
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -932,25 +932,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         ),
                     ),
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -988,25 +988,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         )
                     ),
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -1098,25 +1098,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         )
                     ),
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -1208,25 +1208,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         )
                     ),
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
@@ -1318,25 +1318,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         ),
                     ),
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
@@ -1374,25 +1374,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         )
                     ),
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -1430,25 +1430,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         ),
                     ),
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -1513,25 +1513,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         ),
                     ),
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -1569,25 +1569,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         ),
                     ),
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -1625,25 +1625,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         ),
                     ),
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -1654,25 +1654,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                 alchemyStage = 20,
                 combinationItems = listOf(
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -1683,25 +1683,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                 alchemyStage = 21,
                 combinationItems = listOf(
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -1712,25 +1712,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                 alchemyStage = 22,
                 combinationItems = listOf(
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -1773,25 +1773,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         )
                     )
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = ORIGINAL_STONE_ITEM,
                             description = R.string.original_stone_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
@@ -1829,25 +1829,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         )
                     )
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = GRACIA_MAGIC_STONE_ITEM,
                             description = R.string.gracia_magic_stone_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = GRACIA_MAGIC_STONE_ITEM,
                             description = R.string.gracia_magic_stone_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = ORIGINAL_STONE_ITEM,
                             description = R.string.original_stone_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = PENDANT_ENCHANT_ITEM,
                             description = R.string.pendant_enchant_item,
                         ),
@@ -1885,25 +1885,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         ),
                     )
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = ORIGINAL_STONE_ITEM,
                             description = R.string.original_stone_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = PENDANT_ENCHANT_ITEM,
                             description = R.string.pendant_enchant_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = PENDANT_STONE_ITEM,
                             description = R.string.pendant_stone_item,
                         ),
@@ -2022,25 +2022,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         )
                     ),
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = GRACIA_MAGIC_STONE_ITEM,
                             description = R.string.gracia_magic_stone_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = ORIGINAL_STONE_ITEM,
                             description = R.string.original_stone_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -2051,25 +2051,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                 alchemyStage = 5,
                 combinationItems = listOf(
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = ORIGINAL_STONE_ITEM,
                             description = R.string.original_stone_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = PENDANT_ENCHANT_ITEM,
                             description = R.string.pendant_enchant_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -2081,25 +2081,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                 combinationItems = listOf(
 
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = null,
                             description = R.string.common_upgrade_rare_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = ORIGINAL_STONE_ITEM,
                             description = R.string.original_stone_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -2111,25 +2111,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                 combinationItems = listOf(
 
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = ORIGINAL_STONE_ITEM,
                             description = R.string.original_stone_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = PENDANT_ENCHANT_ITEM,
                             description = R.string.pendant_enchant_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -2194,25 +2194,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         )
                     ),
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = PENDANT_ENCHANT_ITEM,
                             description = R.string.pendant_enchant_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -2223,25 +2223,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                 alchemyStage = 9,
                 combinationItems = listOf(
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -2333,25 +2333,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         ),
                     ),
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -2389,25 +2389,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         )
                     ),
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -2499,25 +2499,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         )
                     ),
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
@@ -2609,25 +2609,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         )
                     ),
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
@@ -2719,25 +2719,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         ),
                     ),
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -2775,25 +2775,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         ),
                     ),
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
@@ -2831,25 +2831,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         ),
                     ),
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -2914,25 +2914,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         ),
                     ),
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
@@ -2970,25 +2970,25 @@ class AlchemyCombinationsRepositoryImpl : AlchemyCombinationsRepository {
                         ),
                     ),
                 ),
-                alchemyResult = AlchemyResult(
+                alchemyCombinationResults = AlchemyCombinationResults(
                     items = listOf(
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = LEGENDARY_ITEM,
                             description = R.string.legendary_item,
                         ),
-                        AlchemyResultItem(
+                        AlchemyCombinationResultItem(
                             imageAssets = HEROIC_ITEM,
                             description = R.string.heroic_item,
                         ),

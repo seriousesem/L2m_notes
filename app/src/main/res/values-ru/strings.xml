@@ -5,6 +5,8 @@
     <string name="ok">Хорошо</string>
     <string name="cancel">Отмена</string>
     <string name="close">Закрыть</string>
+    <string name="add_alchemy_result">Добавить результат</string>
+    <string name="save_alchemy_result">Сохранить результат</string>
 
     <string name="home_screen_title">Домашний экран</string>
     <string name="alchemy_combinations_title">Комбинации алхимии</string>
@@ -45,5 +47,7 @@
     <string name="heroic_4_0">Героический предмет +4 с безопасной заточкой 0 (бижутерия, символ, оружие гиганта)</string>
     <string name="heroic_5_0">Героический предмет +5 с безопасной заточкой 0 (бижутерия, символ, оружие гиганта)</string>
     <string name="heroic_6_0">Героический предмет +6 с безопасной заточкой 0 (бижутерия, символ, оружие гиганта)</string>
+
+
 
 </resources>

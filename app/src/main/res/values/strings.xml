@@ -5,6 +5,8 @@
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="close">Close</string>
+    <string name="add_alchemy_result">Add alchemy result</string>
+    <string name="save_alchemy_result">Save alchemy result</string>
 
     <string name="home_screen_title">Home</string>
     <string name="alchemy_combinations_title">Alchemy combinations</string>

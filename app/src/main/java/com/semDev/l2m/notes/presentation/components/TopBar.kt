@@ -10,6 +10,7 @@ import androidx.compose.ui.graphics.Color.Companion.LightGray
 import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.semDev.l2m.notes.presentation.theme.Grey700
 import com.semDev.l2m.notes.presentation.theme.Indigo
 
 
@@ -31,7 +32,7 @@ fun TopBar(
         navigationIcon = navigationIcon,
         actions = actionIcon,
         colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-            containerColor = DarkGray,
+            containerColor = Grey700,
             navigationIconContentColor = LightGray,
             actionIconContentColor = LightGray,
             titleContentColor = LightGray

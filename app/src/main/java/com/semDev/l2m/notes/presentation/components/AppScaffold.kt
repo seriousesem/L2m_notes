@@ -20,6 +20,6 @@ fun AppScaffold(
         topBar = topBar,
         bottomBar = bottomBar,
         content = content,
-        containerColor = Color.LightGray,
+        containerColor = Color.White,
     )
 }

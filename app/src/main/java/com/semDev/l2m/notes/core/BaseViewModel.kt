@@ -22,5 +22,4 @@ abstract class BaseViewModel<Event : ScreenEvent,  UiState : ViewState> :
         val newState = viewState.value.reducer()
         _viewState.value = newState
     }
-    abstract fun sendUiEvent(event: UiEvent)
 }
