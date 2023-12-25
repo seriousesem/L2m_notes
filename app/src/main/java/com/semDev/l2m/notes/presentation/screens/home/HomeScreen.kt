@@ -13,6 +13,7 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -30,10 +31,12 @@ import com.semDev.l2m.notes.presentation.components.VerticalSpacing
 import com.semDev.l2m.notes.presentation.navigation.Screens
 import com.semDev.l2m.notes.presentation.theme.Grey700
 import com.semDev.l2m.notes.utils.findActivity
+import kotlinx.coroutines.launch
 
 @Composable
 fun HomeScreen(
-    navHostController: NavHostController
+    navHostController: NavHostController,
+    showAd: () -> Unit
 ) {
     val context = LocalContext.current
     BackHandler(onBack = {
@@ -56,7 +59,8 @@ fun HomeScreen(
     ) { contentPadding ->
         HomeScreenView(
             contentPadding = contentPadding,
-            navHostController = navHostController
+            navHostController = navHostController,
+            showAd = showAd
         )
     }
 }
@@ -64,7 +68,8 @@ fun HomeScreen(
 @Composable
 private fun HomeScreenView(
     contentPadding: PaddingValues,
-    navHostController: NavHostController
+    navHostController: NavHostController,
+    showAd: () -> Unit
 ) {
     Column(
         modifier = Modifier
@@ -77,26 +82,29 @@ private fun HomeScreenView(
         MenuItemView(
             navHostController = navHostController,
             route = Screens.AlchemyCombinations.route,
-            description = R.string.alchemy_combinations_title
+            description = R.string.alchemy_combinations_title,
+            showAd = showAd
         )
         VerticalSpacing(spacing = 8)
         MenuItemView(
             navHostController = navHostController,
             route = Screens.AlchemyStatistics.route,
-            description = R.string.alchemy_statistics_screen_title
+            description = R.string.alchemy_statistics_screen_title,
+            showAd = showAd
         )
     }
 }
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 private fun MenuItemView(
     navHostController: NavHostController,
     route: String,
-    description: Int
+    description: Int,
+    showAd: () -> Unit
 ) {
     Card(
         onClick = {
+            showAd()
             navHostController.navigate(route)
         },
         modifier = Modifier

@@ -313,27 +313,6 @@ private fun getAlchemyResultSlotsQuantity(
         groupedResults[index.toString()]?.size ?: 0
     }
     return slotQuantities
-//    return viewModelScope.async {
-//        val glowColorString = when (glowColor) {
-//            GlowColors.GRAY -> GRAY_GLOW_COLOR
-//            GlowColors.BLUE -> BLUE_GLOW_COLOR
-//            GlowColors.GOLDEN -> GOLDEN_GLOW_COLOR
-//        }
-//        val groupedResults = when (chartOption) {
-//            ChartOptions.SHOW_SLOTS_FOR_GLOW -> {
-//                allAlchemyResults
-//                    .filter { it.alchemyGlowColor == glowColorString }
-//                    .groupBy { AlchemyResultModel::alchemySlotIndex}
-//            }
-//            else -> {
-//                allAlchemyResults.groupBy { it.alchemySlotIndex }
-//            }
-//        }
-//        val slotQuantities = (1..5).map { index ->
-//            groupedResults[index.toString()]?.size ?: 0
-//        }
-//        slotQuantities
-//    }.await()
 }
 
 

@@ -170,7 +170,6 @@ private fun BarChartView(
 ) {
     val alchemyResultSlotsQuantity = viewModel.viewState.value.alchemyResultSlotsQuantity
     val maxRange = if (alchemyResultSlotsQuantity.isEmpty()) 0 else alchemyResultSlotsQuantity.max()
-    val stepSize = if (maxRange == 0) 1 else if (maxRange < 5) maxRange else 4
 
     val quantityString = stringResource(id = R.string.quantity)
     val slotString = stringResource(id = R.string.slot)
@@ -283,7 +282,7 @@ private fun ChartSettingsView(
                     )
                 )
                 Text(
-                    text = "Statistics for all slots",
+                    text = stringResource(id = R.string.statistics_for_all_slots),
                     fontSize = 12.sp
                 )
             }
@@ -307,7 +306,7 @@ private fun ChartSettingsView(
                     )
                 )
                 Text(
-                    text = "Statistics for glow color",
+                    text = stringResource(id = R.string.statistics_for_glow_color),
                     fontSize = 12.sp
                 )
             }
@@ -539,7 +538,7 @@ private fun AddAlchemyResultBottomSheet(
         )
         {
             Text(
-                text = "Select the slot index",
+                text = stringResource(id = R.string.select_slot_index),
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.LightGray,
@@ -565,7 +564,7 @@ private fun AddAlchemyResultBottomSheet(
                 }
             }
             Text(
-                text = "Select glow color",
+                text = stringResource(id = R.string.select_glow_color),
                 fontSize = 18.sp,
                 fontWeight = FontWeight.Bold,
                 color = Color.LightGray,

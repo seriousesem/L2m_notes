@@ -1,22 +1,27 @@
 package com.semDev.l2m.notes.presentation.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.semDev.l2m.notes.presentation.screens.alchemy_combinations.AlchemyCombinationsScreen
 import com.semDev.l2m.notes.presentation.screens.alchemy_statistics.AlchemyStatisticsScreen
 import com.semDev.l2m.notes.presentation.screens.home.HomeScreen
+import kotlinx.coroutines.launch
 
 @Composable
-fun HomeNavGraph(navHostController: NavHostController) {
+fun HomeNavGraph(navHostController: NavHostController, showAd: () -> Unit) {
 
     NavHost(
         navController = navHostController,
         startDestination = Screens.Home.route
     ) {
         composable(route = Screens.Home.route) {
-            HomeScreen(navHostController = navHostController)
+            HomeScreen(
+                navHostController = navHostController,
+                showAd = showAd
+            )
         }
         composable(route = Screens.AlchemyCombinations.route) {
             AlchemyCombinationsScreen(navHostController = navHostController)
@@ -30,13 +35,13 @@ fun HomeNavGraph(navHostController: NavHostController) {
 sealed class Screens (
     val route: String
 ){
-    object Home : Screens(
+    data object Home : Screens(
         route = "Home"
     )
-    object AlchemyCombinations : Screens(
+    data object AlchemyCombinations : Screens(
         route = "AlchemyCombinations"
     )
-    object AlchemyStatistics : Screens(
+    data object AlchemyStatistics : Screens(
         route = "AlchemyStatistics"
     )
 }

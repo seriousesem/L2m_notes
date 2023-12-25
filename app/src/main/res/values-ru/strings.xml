@@ -53,5 +53,9 @@
     <string name="gray_glow">Серое свечение</string>
     <string name="blue_glow">Синее свечение</string>
     <string name="golden_glow">Золотое свечение</string>
+    <string name="statistics_for_all_slots">Статистика для всех слотов</string>
+    <string name="statistics_for_glow_color">Статистика по цвету свечения</string>
+    <string name="select_slot_index">Выберите индекс слота</string>
+    <string name="select_glow_color">Выберите цвет свечения</string>
 
 </resources>

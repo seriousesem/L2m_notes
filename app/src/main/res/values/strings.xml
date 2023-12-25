@@ -48,12 +48,17 @@
     <string name="heroic_6_0">Heroic item +6 with safe enchant 0 (jewelry, symbol, giant weapon)</string>
 
     <string name="ad_mod_banner_id" translatable="false"> </string>
-    <string name="interstitial_ad_unit_id" translatable="false"> </string>
+    <string name="interstitial_ad_unit_id" translatable="false">ca-app-pub-6156568051462771/5957792275</string>
+    <string name="app_open_ads_id" translatable="false">ca-app-pub-6156568051462771/2476307293</string>
 
     <string name="quantity">Quantity:</string>
     <string name="slot">Slot</string>
     <string name="gray_glow">Gray glow</string>
     <string name="blue_glow">Blue glow</string>
     <string name="golden_glow">Golden glow</string>
+    <string name="statistics_for_all_slots">Statistics for all slots</string>
+    <string name="statistics_for_glow_color">Statistics for glow color</string>
+    <string name="select_slot_index">Select the slot index</string>
+    <string name="select_glow_color">Select glow color</string>
 
 </resources>

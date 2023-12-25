@@ -1,4 +1,4 @@
-package com.semDev.l2m.notes.presentation.components
+package com.semDev.l2m.notes.presentation.components.ads
 import android.app.Activity
 import android.content.Context
 import android.util.Log
@@ -15,8 +15,9 @@ class AdMobInterstitial @Inject constructor(
     private val context: Context
 ) {
     private var interstitialAd: InterstitialAd? = null
-    fun loadAd() {
-        val adUnitId = context.getString(R.string.interstitial_ad_unit_id)
+    private val adUnitId = context.getString(R.string.interstitial_ad_unit_id)
+
+    fun loadAds() {
         val adRequest = AdRequest.Builder().build()
 
         InterstitialAd.load(context, adUnitId, adRequest, object : InterstitialAdLoadCallback() {
@@ -32,21 +33,25 @@ class AdMobInterstitial @Inject constructor(
         })
     }
 
-    fun showAdd(activity: Activity) {
+    fun showAds(activity: Activity) {
         interstitialAd?.let { ad ->
             ad.fullScreenContentCallback = object : FullScreenContentCallback() {
                 override fun onAdDismissedFullScreenContent() {
                     super.onAdDismissedFullScreenContent()
                     interstitialAd = null
+                    loadAds()
                 }
 
-                override fun onAdFailedToShowFullScreenContent(p0: AdError) {
-                    super.onAdFailedToShowFullScreenContent(p0)
+                override fun onAdFailedToShowFullScreenContent(error: AdError) {
+                    super.onAdFailedToShowFullScreenContent(error)
                     interstitialAd = null
+                    loadAds()
                 }
             }
             ad.show(activity)
+            loadAds()
         } ?: kotlin.run {
+            loadAds()
             Log.d("TAG", "mInterstitialAd = null")
         }
     }

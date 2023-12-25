@@ -1,4 +1,4 @@
-package com.semDev.l2m.notes.presentation.components
+package com.semDev.l2m.notes.presentation.components.ads
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
