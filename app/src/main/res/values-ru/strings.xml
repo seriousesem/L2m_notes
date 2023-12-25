@@ -48,6 +48,10 @@
     <string name="heroic_5_0">Героический предмет +5 с безопасной заточкой 0 (бижутерия, символ, оружие гиганта)</string>
     <string name="heroic_6_0">Героический предмет +6 с безопасной заточкой 0 (бижутерия, символ, оружие гиганта)</string>
 
-
+    <string name="quantity">Количество:</string>
+    <string name="slot">Слот</string>
+    <string name="gray_glow">Серое свечение</string>
+    <string name="blue_glow">Синее свечение</string>
+    <string name="golden_glow">Золотое свечение</string>
 
 </resources>

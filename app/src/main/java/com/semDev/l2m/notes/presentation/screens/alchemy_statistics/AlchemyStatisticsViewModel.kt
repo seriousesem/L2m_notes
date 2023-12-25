@@ -55,13 +55,19 @@ class AlchemyStatisticsViewModel @Inject constructor(
 
             AlchemyStatisticsScreenEvent.SELECT_CHART_OPTION -> {
                 val chartOption = data as ChartOptions
+                val alchemyResultSlotsQuantity =
+                    getAlchemyResultSlotsQuantity(
+                        allAlchemyResults = viewState.value.alchemyResults,
+                        chartOption = chartOption,
+                        glowColor = viewState.value.glowColor
+                    )
                 setState {
                     copy(
                         isLoading = this.isLoading,
                         isShowBottomSheet = this.isShowBottomSheet,
                         errorMessage = this.errorMessage,
                         alchemyResults = this.alchemyResults,
-                        alchemyResultSlotsQuantity = this.alchemyResultSlotsQuantity,
+                        alchemyResultSlotsQuantity = alchemyResultSlotsQuantity,
                         chartOption = chartOption,
                         glowColor = this.glowColor,
                         selectedSlotIndex = this.selectedSlotIndex,
@@ -72,13 +78,19 @@ class AlchemyStatisticsViewModel @Inject constructor(
 
             AlchemyStatisticsScreenEvent.SELECT_GLOW_COLOR_OPTION -> {
                 val glowColor = data as GlowColors
+                val alchemyResultSlotsQuantity =
+                    getAlchemyResultSlotsQuantity(
+                        allAlchemyResults = viewState.value.alchemyResults,
+                        chartOption = viewState.value.chartOption,
+                        glowColor = glowColor
+                    )
                 setState {
                     copy(
                         isLoading = this.isLoading,
                         isShowBottomSheet = this.isShowBottomSheet,
                         errorMessage = this.errorMessage,
                         alchemyResults = this.alchemyResults,
-                        alchemyResultSlotsQuantity = this.alchemyResultSlotsQuantity,
+                        alchemyResultSlotsQuantity = alchemyResultSlotsQuantity,
                         chartOption = this.chartOption,
                         glowColor = glowColor,
                         selectedSlotIndex = this.selectedSlotIndex,
@@ -104,6 +116,7 @@ class AlchemyStatisticsViewModel @Inject constructor(
                 val alchemyResultModel = data as AlchemyResultModel
                 deleteAlchemyResult(alchemyResultModel = alchemyResultModel)
             }
+
             AlchemyStatisticsScreenEvent.SELECT_SLOT_INDEX -> {
                 val selectedSlotIndex = data as String
                 setState {
@@ -276,60 +289,51 @@ class AlchemyStatisticsViewModel @Inject constructor(
             showErrorDialog(e.message)
         }
     }
-
-//    private suspend fun getAlchemyResultSlotsQuantity(
-//        allAlchemyResults: List<AlchemyResultModel>,
-//        chartOption: ChartOptions,
-//        glowColor: GlowColors
-//    ): List<Int> {
-//        return viewModelScope.async {
-//            when (chartOption) {
-//                ChartOptions.SHOW_SLOTS_FOR_GLOW -> {
-//                    val glowColorString = when (glowColor) {
-//                        GlowColors.GRAY -> GRAY_GLOW_COLOR
-//                        GlowColors.BLUE -> BLUE_GLOW_COLOR
-//                        GlowColors.GOLDEN -> GOLDEN_GLOW_COLOR
-//                    }
-//                    val slotQuantities = allAlchemyResults
-//                        .filter { it.alchemyGlowColor == glowColorString }
-//                        .groupBy { it.alchemySlotIndex }
-//                        .map { (_, group) -> group.size }
-//                    slotQuantities
-//                }
-//                else -> {
-//                    allAlchemyResults
-//                        .groupBy { it.alchemySlotIndex }
-//                        .map { (_, group) -> group.size }
-//                }
-//            }
-//        }.await()
-//    }
-private suspend fun getAlchemyResultSlotsQuantity(
+private fun getAlchemyResultSlotsQuantity(
     allAlchemyResults: List<AlchemyResultModel>,
     chartOption: ChartOptions,
     glowColor: GlowColors
 ): List<Int> {
-    return viewModelScope.async {
-        val glowColorString = when (glowColor) {
-            GlowColors.GRAY -> GRAY_GLOW_COLOR
-            GlowColors.BLUE -> BLUE_GLOW_COLOR
-            GlowColors.GOLDEN -> GOLDEN_GLOW_COLOR
+    val glowColorString = when (glowColor) {
+        GlowColors.GRAY -> GRAY_GLOW_COLOR
+        GlowColors.BLUE -> BLUE_GLOW_COLOR
+        GlowColors.GOLDEN -> GOLDEN_GLOW_COLOR
+    }
+    val groupedResults = when (chartOption) {
+        ChartOptions.SHOW_SLOTS_FOR_GLOW -> {
+            allAlchemyResults
+                .filter { it.alchemyGlowColor == glowColorString }
+                .groupBy { it.alchemySlotIndex}
         }
-        val groupedResults = when (chartOption) {
-            ChartOptions.SHOW_SLOTS_FOR_GLOW -> {
-                allAlchemyResults
-                    .filter { it.alchemyGlowColor == glowColorString }
-                    .groupBy { AlchemyResultModel::alchemySlotIndex}
-            }
-            else -> {
-                allAlchemyResults.groupBy { it.alchemySlotIndex }
-            }
+        else -> {
+            allAlchemyResults.groupBy { it.alchemySlotIndex }
         }
-        val slotQuantities = (1..5).map { index ->
-            groupedResults[index.toString()]?.size ?: 0
-        }
-        slotQuantities
-    }.await()
+    }
+    val slotQuantities = (1..5).map { index ->
+        groupedResults[index.toString()]?.size ?: 0
+    }
+    return slotQuantities
+//    return viewModelScope.async {
+//        val glowColorString = when (glowColor) {
+//            GlowColors.GRAY -> GRAY_GLOW_COLOR
+//            GlowColors.BLUE -> BLUE_GLOW_COLOR
+//            GlowColors.GOLDEN -> GOLDEN_GLOW_COLOR
+//        }
+//        val groupedResults = when (chartOption) {
+//            ChartOptions.SHOW_SLOTS_FOR_GLOW -> {
+//                allAlchemyResults
+//                    .filter { it.alchemyGlowColor == glowColorString }
+//                    .groupBy { AlchemyResultModel::alchemySlotIndex}
+//            }
+//            else -> {
+//                allAlchemyResults.groupBy { it.alchemySlotIndex }
+//            }
+//        }
+//        val slotQuantities = (1..5).map { index ->
+//            groupedResults[index.toString()]?.size ?: 0
+//        }
+//        slotQuantities
+//    }.await()
 }
 
 

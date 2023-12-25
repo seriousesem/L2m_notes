@@ -172,6 +172,9 @@ private fun BarChartView(
     val maxRange = if (alchemyResultSlotsQuantity.isEmpty()) 0 else alchemyResultSlotsQuantity.max()
     val stepSize = if (maxRange == 0) 1 else if (maxRange < 5) maxRange else 4
 
+    val quantityString = stringResource(id = R.string.quantity)
+    val slotString = stringResource(id = R.string.slot)
+
     val barData = mutableListOf<BarData>()
     for (index in 0..6) {
         if (index == 0 || index == 6) {
@@ -203,7 +206,7 @@ private fun BarChartView(
                         5 -> Color.Red
                         else -> Color.Transparent
                     },
-                    label = "Slot $index",
+                    label = "$slotString $index",
                 )
             )
         }
@@ -239,7 +242,7 @@ private fun BarChartView(
             paddingBetweenBars = 24.dp,
             selectionHighlightData = SelectionHighlightData(
                 highlightTextBackgroundColor = Color.Transparent,
-                popUpLabel = { _, y -> "Quantity:${y.toInt()}" }
+                popUpLabel = { _, y -> "$quantityString${y.toInt()}" }
             )
         )
     )
@@ -336,7 +339,7 @@ private fun ChartSettingsView(
                         )
                     )
                     Text(
-                        text = "Gray glow",
+                        text = stringResource(id = R.string.gray_glow),
                         fontSize = 12.sp
                     )
                 }
@@ -359,7 +362,7 @@ private fun ChartSettingsView(
                         )
                     )
                     Text(
-                        text = "Blue glow",
+                        text = stringResource(id = R.string.blue_glow),
                         fontSize = 12.sp
                     )
                 }
@@ -382,7 +385,7 @@ private fun ChartSettingsView(
                         )
                     )
                     Text(
-                        text = "Golden glow",
+                        text = stringResource(id = R.string.golden_glow),
                         fontSize = 12.sp
                     )
                 }
