@@ -6,9 +6,9 @@
     <string name="cancel">Отмена</string>
     <string name="close">Закрыть</string>
     <string name="add_alchemy_result">Добавить результат</string>
-    <string name="save_alchemy_result">Сохранить результат</string>
+    <string name="save_alchemy_result">Сохранить</string>
 
-    <string name="home_screen_title">Домашний экран</string>
+    <string name="home_screen_title">L2M заметки</string>
     <string name="alchemy_combinations_title">Комбинации алхимии</string>
     <string name="alchemy_statistics_screen_title">Статистика алхимии</string>
     <string name="normal_alchemy_screen_title">Обычная алхимия</string>
@@ -50,12 +50,12 @@
 
     <string name="quantity">Количество:</string>
     <string name="slot">Слот</string>
-    <string name="gray_glow">Серое свечение</string>
-    <string name="blue_glow">Синее свечение</string>
-    <string name="golden_glow">Золотое свечение</string>
-    <string name="statistics_for_all_slots">Статистика для всех слотов</string>
-    <string name="statistics_for_glow_color">Статистика по цвету свечения</string>
-    <string name="select_slot_index">Выберите индекс слота</string>
+    <string name="gray_glow">Серое</string>
+    <string name="blue_glow">Синее</string>
+    <string name="golden_glow">Золотое</string>
+    <string name="statistics_for_all_slots">Для всех слотов</string>
+    <string name="statistics_for_glow_color">По цвету свечения</string>
+    <string name="select_slot_index">Выберите номер слота</string>
     <string name="select_glow_color">Выберите цвет свечения</string>
 
 </resources>

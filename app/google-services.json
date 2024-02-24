@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "805915489982",
+    "project_id": "l2m-notes-8a602",
+    "storage_bucket": "l2m-notes-8a602.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:805915489982:android:414bfa2be1353f87a7d0ef",
+        "android_client_info": {
+          "package_name": "com.semDev.l2m_notes"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_85Refdl9IAc935_MC5f5-1UZwC6pRLM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

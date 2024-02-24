@@ -6,13 +6,26 @@
     <string name="cancel">Cancel</string>
     <string name="close">Close</string>
     <string name="add_alchemy_result">Add alchemy result</string>
-    <string name="save_alchemy_result">Save alchemy result</string>
+    <string name="save_alchemy_result">Save</string>
 
-    <string name="home_screen_title">Home</string>
+    <string name="authenticate" translatable="false">Authenticate</string>
+    <string name="email" translatable="false">Email</string>
+    <string name="password" translatable="false">Password</string>
+    <string name="confirm_password" translatable="false">Confirm password</string>
+    <string name="login" translatable="false">Login</string>
+    <string name="create_account" translatable="false">Create account</string>
+    <string name="create_account_description" translatable="false">Don\'t have an account? Click here to create account!</string>
+    <string name="logout" translatable="false">Sign out</string>
+    <string name="delete_account" translatable="false">Delete account</string>
+
+
+    <string name="home_screen_title">L2M notes</string>
     <string name="alchemy_combinations_title">Alchemy combinations</string>
     <string name="alchemy_statistics_screen_title">Alchemy statistics</string>
     <string name="normal_alchemy_screen_title">Normal alchemy</string>
     <string name="top_alchemy_screen_title">Top alchemy</string>
+    <string name="login_screen_title" translatable="false">Login</string>
+    <string name="create_account_screen_title" translatable="false">Create account</string>
 
     <string name="stage_of_alchemy">Stage of alchemy: </string>
     <string name="alchemy_result_combination_title">Alchemy result</string>
@@ -53,12 +66,12 @@
 
     <string name="quantity">Quantity:</string>
     <string name="slot">Slot</string>
-    <string name="gray_glow">Gray glow</string>
-    <string name="blue_glow">Blue glow</string>
-    <string name="golden_glow">Golden glow</string>
-    <string name="statistics_for_all_slots">Statistics for all slots</string>
-    <string name="statistics_for_glow_color">Statistics for glow color</string>
-    <string name="select_slot_index">Select the slot index</string>
+    <string name="gray_glow">Gray</string>
+    <string name="blue_glow">Blue</string>
+    <string name="golden_glow">Golden</string>
+    <string name="statistics_for_all_slots">For all slots</string>
+    <string name="statistics_for_glow_color">For glow color</string>
+    <string name="select_slot_index">Select the slot number</string>
     <string name="select_glow_color">Select glow color</string>
 
 </resources>

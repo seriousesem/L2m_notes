@@ -9,7 +9,7 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="com.seriousesem.phgim.school" />
+                  <option name="appId" value="com.semdev.my_timers" />
                 </ConnectionSetting>
               </option>
               <option name="failureTypes">
@@ -28,10 +28,10 @@
             <InsightsFilterSettings>
               <option name="connection">
                 <ConnectionSetting>
-                  <option name="appId" value="PLACEHOLDER" />
-                  <option name="mobileSdkAppId" value="" />
-                  <option name="projectId" value="" />
-                  <option name="projectNumber" value="" />
+                  <option name="appId" value="com.semDev.l2m_notes" />
+                  <option name="mobileSdkAppId" value="1:805915489982:android:414bfa2be1353f87a7d0ef" />
+                  <option name="projectId" value="l2m-notes-8a602" />
+                  <option name="projectNumber" value="805915489982" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
