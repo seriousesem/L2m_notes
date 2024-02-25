@@ -3,5 +3,7 @@ import com.semDev.l2m_notes.presentation.core.ViewState
 
 data class LoginScreenState(
     val email: String,
-    val password: String
+    val password: String,
+    val isLoading: Boolean = false,
+    val errorMessage: String? = null,
 ) : ViewState

@@ -3,6 +3,7 @@ package com.semDev.l2m_notes.presentation.features.auth.create_account
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -18,8 +19,10 @@ import com.semDev.l2m_notes.R
 import com.semDev.l2m_notes.presentation.components.AppElevatedButton
 import com.semDev.l2m_notes.presentation.components.BackIconButton
 import com.semDev.l2m_notes.presentation.components.EmailTextField
+import com.semDev.l2m_notes.presentation.components.ErrorDialog
 import com.semDev.l2m_notes.presentation.components.PasswordTextField
-import com.semDev.l2m_notes.presentation.components.SettingsIconButton
+import com.semDev.l2m_notes.presentation.components.ScreenProgress
+import com.semDev.l2m_notes.presentation.components.MenuIconButton
 import com.semDev.l2m_notes.presentation.components.TopBar
 import com.semDev.l2m_notes.presentation.components.VerticalSpacing
 
@@ -31,8 +34,6 @@ fun CreateAccountScreen(
     modifier: Modifier = Modifier,
     viewModel: CreateAccountViewModel = hiltViewModel()
 ) {
-    val email = viewModel.viewState.value.email
-    val password = viewModel.viewState.value.password
     BackHandler(onBack = {
         popUpScreen()
     })
@@ -42,61 +43,89 @@ fun CreateAccountScreen(
             TopBar(
                 title = stringResource(id = R.string.create_account),
                 navigationIcon = {
-                    BackIconButton(action = popUpScreen)
-                },
-                actionIcon = {
-                    SettingsIconButton(
-                        action = {}
+                    BackIconButton(
+                        action = popUpScreen
                     )
                 }
             )
         },
     ) { padding ->
-        Column(
-            modifier = modifier
-                .fillMaxSize()
-                .padding(padding),
-            horizontalAlignment = Alignment.CenterHorizontally
-        ) {
-            VerticalSpacing(16)
-            Image(
-                painter = painterResource(id = R.drawable.login_image),
-                contentDescription = "Auth image",
-                modifier = modifier
-                    .size(150.dp)
-            )
-            VerticalSpacing(12)
-            EmailTextField(
-                modifier = modifier,
-                email = email,
-                updateEmailAction = {
+        val state = viewModel.viewState.value
+        if (state.isLoading) {
+            ScreenProgress()
+        } else if (state.errorMessage != null) {
+            ErrorDialog(
+                errorMessage = state.errorMessage,
+                action = {
                     viewModel.setEvent(
-                        event = CreateAccountScreenEvent.UPDATE_EMAIL,
-                        data = it,
+                        event = CreateAccountScreenEvent.HIDE_ERROR_DIALOG,
+                        data = null,
                     )
                 }
             )
-            PasswordTextField(
+        } else {
+            CreateAccountScreenView(
                 modifier = modifier,
-                password = password,
-                updatePasswordAction = {
-                    viewModel.setEvent(
-                        event = CreateAccountScreenEvent.UPDATE_PASSWORD,
-                        data = it,
-                    )
-                }
-            )
-            VerticalSpacing(16)
-            AppElevatedButton(
-                modifier = modifier,
-                label = stringResource(R.string.create_account),
-                buttonAction = {
-                    viewModel.setEvent(
-                        event = CreateAccountScreenEvent.SIGN_UP,
-                        data = openAndPopUp
-                    )
-                }
+                padding = padding,
+                viewModel = viewModel,
+                openAndPopUp = openAndPopUp,
             )
         }
+    }
+}
+
+@Composable
+fun CreateAccountScreenView(
+    modifier: Modifier,
+    padding: PaddingValues,
+    viewModel: CreateAccountViewModel,
+    openAndPopUp: (String, String) -> Unit,
+) {
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+            .padding(padding),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        VerticalSpacing(16)
+        Image(
+            painter = painterResource(id = R.drawable.login_image),
+            contentDescription = "Auth image",
+            modifier = modifier
+                .size(100.dp)
+        )
+        VerticalSpacing(12)
+        EmailTextField(
+            modifier = modifier,
+            email = viewModel.viewState.value.email,
+            updateEmailAction = {
+                viewModel.setEvent(
+                    event = CreateAccountScreenEvent.UPDATE_EMAIL,
+                    data = it,
+                )
+            }
+        )
+        PasswordTextField(
+            modifier = modifier,
+            password = viewModel.viewState.value.password,
+            updatePasswordAction = {
+                viewModel.setEvent(
+                    event = CreateAccountScreenEvent.UPDATE_PASSWORD,
+                    data = it,
+                )
+            }
+        )
+        VerticalSpacing(16)
+        AppElevatedButton(
+            modifier = modifier,
+            label = stringResource(R.string.create_account),
+            enabled = viewModel.viewState.value.email.isNotEmpty() && viewModel.viewState.value.password.isNotEmpty(),
+            buttonAction = {
+                viewModel.setEvent(
+                    event = CreateAccountScreenEvent.CREATE_ACCOUNT,
+                    data = openAndPopUp
+                )
+            }
+        )
     }
 }

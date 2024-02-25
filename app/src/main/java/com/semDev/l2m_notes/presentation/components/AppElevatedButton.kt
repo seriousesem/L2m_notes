@@ -16,10 +16,12 @@ import com.semDev.l2m_notes.presentation.theme.Grey700
 fun AppElevatedButton(
     modifier: Modifier,
     label: String,
+    enabled: Boolean,
     buttonAction: () -> Unit
 ){
     return  Button(
         onClick = { buttonAction()},
+        enabled = enabled,
         modifier = modifier
             .fillMaxWidth()
             .padding(16.dp, 0.dp),
@@ -27,7 +29,7 @@ fun AppElevatedButton(
             containerColor = Grey700,
             contentColor = Color.LightGray,
             disabledContentColor = Color.LightGray,
-            disabledContainerColor = Grey700
+            disabledContainerColor = Color.Gray
         )
     ) {
         Text(

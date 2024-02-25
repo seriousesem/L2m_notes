@@ -18,7 +18,6 @@
     <string name="logout" translatable="false">Sign out</string>
     <string name="delete_account" translatable="false">Delete account</string>
 
-
     <string name="home_screen_title">L2M notes</string>
     <string name="alchemy_combinations_title">Alchemy combinations</string>
     <string name="alchemy_statistics_screen_title">Alchemy statistics</string>

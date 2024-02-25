@@ -20,11 +20,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.google.android.play.integrity.internal.o
 import com.semDev.l2m_notes.R
 import com.semDev.l2m_notes.core.navigation.ALCHEMY_COMBINATIONS_SCREEN
 import com.semDev.l2m_notes.core.navigation.ALCHEMY_STATISTICS_SCREEN
 import com.semDev.l2m_notes.presentation.components.AppScaffold
-import com.semDev.l2m_notes.presentation.components.SettingsIconButton
+import com.semDev.l2m_notes.presentation.components.MenuIconButton
 import com.semDev.l2m_notes.presentation.components.TopBar
 import com.semDev.l2m_notes.presentation.components.VerticalSpacing
 import com.semDev.l2m_notes.utils.findActivity
@@ -39,19 +40,19 @@ fun HomeScreen(
         context.findActivity()?.finish()
     })
     AppScaffold(
-        topBar = {
+        topBar = { openDrawer ->
             TopBar(
                 title = stringResource(id = R.string.home_screen_title),
                 navigationIcon = {
                 },
                 actionIcon = {
-                    SettingsIconButton(
-                        action = {}
+                    MenuIconButton(
+                        action = openDrawer
                     )
                 }
             )
         },
-        bottomBar = {}
+        openScreen = openScreen
     ) { contentPadding ->
         HomeScreenView(
             contentPadding = contentPadding,

@@ -54,11 +54,17 @@ fun NavGraphBuilder.appGraph(navigationAction: NavigationAction, showAd: () -> U
 
 
     composable(ALCHEMY_COMBINATIONS_SCREEN) {
-        AlchemyCombinationsScreen(popUpScreen = { navigationAction.popUp() })
+        AlchemyCombinationsScreen(
+            popUpScreen = { navigationAction.popUp() },
+            openScreen = { route -> navigationAction.navigate(route) },
+        )
     }
 
     composable(ALCHEMY_STATISTICS_SCREEN) {
-        AlchemyStatisticsScreen(popUpScreen = { navigationAction.popUp() })
+        AlchemyStatisticsScreen(
+            popUpScreen = { navigationAction.popUp() },
+            openScreen = { route -> navigationAction.navigate(route) },
+        )
     }
 
 }

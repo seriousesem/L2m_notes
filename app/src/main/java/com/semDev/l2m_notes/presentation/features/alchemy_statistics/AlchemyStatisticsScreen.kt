@@ -27,7 +27,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -47,7 +46,7 @@ import com.semDev.l2m_notes.presentation.components.BackIconButton
 import com.semDev.l2m_notes.presentation.components.ErrorDialog
 import com.semDev.l2m_notes.presentation.components.HorizontalSpacing
 import com.semDev.l2m_notes.presentation.components.ScreenProgress
-import com.semDev.l2m_notes.presentation.components.SettingsIconButton
+import com.semDev.l2m_notes.presentation.components.MenuIconButton
 import com.semDev.l2m_notes.presentation.components.TopBar
 import com.semDev.l2m_notes.presentation.components.VerticalSpacing
 import com.semDev.l2m_notes.presentation.theme.Blue
@@ -65,29 +64,28 @@ import com.semDev.l2m_notes.utils.AlchemySlotIndexes.THIRD_SLOT_INDEX
 @Composable
 fun AlchemyStatisticsScreen(
     popUpScreen: () -> Unit,
+    openScreen: (String) -> Unit,
     viewModel: AlchemyStatisticsViewModel = hiltViewModel()
 ) {
-    val context = LocalContext.current
     BackHandler(onBack = {
         popUpScreen()
     })
     val state = viewModel.viewState.value
     AppScaffold(
-        topBar = {
+        topBar = { openDrawer ->
             TopBar(
                 title = stringResource(id = R.string.alchemy_statistics_screen_title),
                 navigationIcon = {
                     BackIconButton(action = popUpScreen)
                 },
                 actionIcon = {
-                    SettingsIconButton(
-                        action = {}
+                    MenuIconButton(
+                        action = openDrawer
                     )
                 }
             )
         },
-        bottomBar = {
-        }
+        openScreen = openScreen,
     ) { contentPadding ->
         if (state.isLoading) {
             ScreenProgress()
@@ -96,7 +94,7 @@ fun AlchemyStatisticsScreen(
                 errorMessage = state.errorMessage,
                 action = {
                     viewModel.setEvent(
-                        event = AlchemyStatisticsScreenEvent.SELECT_CHART_OPTION,
+                        event = AlchemyStatisticsScreenEvent.HIDE_ERROR_DIALOG,
                         data = null,
                     )
                 }
@@ -257,7 +255,7 @@ private fun ChartSettingsView(
 
     Column(modifier = Modifier) {
         Row(
-            horizontalArrangement = Arrangement.SpaceBetween,
+            horizontalArrangement = Arrangement.SpaceAround,
             modifier = Modifier
                 .padding(0.dp)
                 .fillMaxWidth()
@@ -313,7 +311,7 @@ private fun ChartSettingsView(
         if (viewModel.viewState.value.chartOption == ChartOptions.SHOW_SLOTS_FOR_GLOW) {
             VerticalSpacing(spacing = 8)
             Row(
-                horizontalArrangement = Arrangement.SpaceBetween,
+                horizontalArrangement = Arrangement.SpaceAround,
                 modifier = Modifier
                     .padding(0.dp)
                     .fillMaxWidth()

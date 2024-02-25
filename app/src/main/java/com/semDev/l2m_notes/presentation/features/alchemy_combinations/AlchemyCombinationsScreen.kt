@@ -43,7 +43,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.navigation.NavHostController
 import com.semDev.l2m_notes.R
 import com.semDev.l2m_notes.core.AlchemyType
 import com.semDev.l2m_notes.domain.model.alchemy_combinations.AlchemyCombinationItem
@@ -53,7 +52,7 @@ import com.semDev.l2m_notes.presentation.components.AppScaffold
 import com.semDev.l2m_notes.presentation.components.BackIconButton
 import com.semDev.l2m_notes.presentation.components.HorizontalSpacing
 import com.semDev.l2m_notes.presentation.components.ScreenProgress
-import com.semDev.l2m_notes.presentation.components.SettingsIconButton
+import com.semDev.l2m_notes.presentation.components.MenuIconButton
 import com.semDev.l2m_notes.presentation.components.TopBar
 import com.semDev.l2m_notes.presentation.components.VerticalSpacing
 import com.semDev.l2m_notes.presentation.theme.Grey700
@@ -64,6 +63,7 @@ import com.semDev.l2m_notes.utils.MapKeys.MESSAGE_KEY
 @Composable
 fun AlchemyCombinationsScreen(
     popUpScreen: () -> Unit,
+    openScreen: (String) -> Unit,
     viewModel: AlchemyCombinationsViewModel = hiltViewModel()
 ) {
     val context = LocalContext.current
@@ -72,15 +72,15 @@ fun AlchemyCombinationsScreen(
     })
     val state = viewModel.viewState.value
     AppScaffold(
-        topBar = {
+        topBar = { openDrawer ->
             TopBar(
                 title = stringResource(id = state.alchemyType.description),
                 navigationIcon = {
                     BackIconButton(action = popUpScreen)
                 },
                 actionIcon = {
-                    SettingsIconButton(
-                        action = {}
+                    MenuIconButton(
+                        action = openDrawer
                     )
                 }
             )
@@ -95,7 +95,8 @@ fun AlchemyCombinationsScreen(
                     )
                 }
             )
-        }
+        },
+        openScreen = openScreen
     ) { contentPadding ->
         if (state.isLoading) {
             ScreenProgress()

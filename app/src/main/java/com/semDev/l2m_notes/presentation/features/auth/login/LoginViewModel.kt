@@ -3,6 +3,7 @@ package com.semDev.l2m_notes.presentation.features.auth.login
 import com.semDev.l2m_notes.core.navigation.HOME_SCREEN
 import com.semDev.l2m_notes.core.navigation.LOGIN_SCREEN
 import com.semDev.l2m_notes.core.navigation.CREATE_ACCOUNT_SCREEN
+import com.semDev.l2m_notes.domain.core.AppResult
 import com.semDev.l2m_notes.domain.repository.AuthRepository
 import com.semDev.l2m_notes.presentation.core.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -25,8 +26,13 @@ class LoginViewModel @Inject constructor(
         when (event) {
             LoginScreenEvent.UPDATE_EMAIL -> updateEmail(data as String)
             LoginScreenEvent.UPDATE_PASSWORD -> updatePassword(data as String)
-            LoginScreenEvent.SIGN_IN -> signIn(data as (String, String) -> Unit)
-            LoginScreenEvent.GO_TO_SIGN_UP_SCREEN -> goToSignUpScreen(data as (String) -> Unit)
+            LoginScreenEvent.LOGIN -> {
+                showLoading()
+                login(data as (String, String) -> Unit)
+            }
+
+            LoginScreenEvent.GO_TO_CREATE_ACCOUNT_SCREEN -> goToCreateAccountScreen(data as (String) -> Unit)
+            LoginScreenEvent.HIDE_ERROR_DIALOG -> hideErrorDialog()
         }
     }
 
@@ -46,16 +52,62 @@ class LoginViewModel @Inject constructor(
         }
     }
 
-    private fun signIn(openAndPopUp: (String, String) -> Unit) {
-        launchCatching {
-            authRepository.login(viewState.value.email, viewState.value.password)
-            openAndPopUp(HOME_SCREEN, LOGIN_SCREEN)
+    private fun login(openAndPopUp: (String, String) -> Unit) {
+        try {
+            launchCatching {
+                when (val responseResult =
+                    authRepository.login(viewState.value.email, viewState.value.password)) {
+                    is AppResult.Success -> {
+                        hideLoading()
+                        openAndPopUp(HOME_SCREEN, LOGIN_SCREEN)
+                    }
+
+                    is AppResult.Error -> {
+                        hideLoading()
+                        showErrorDialog(responseResult.message)
+                    }
+                }
+            }
+        } catch (e: Exception) {
+            hideLoading()
+            showErrorDialog(e.message)
         }
     }
 
-    private fun goToSignUpScreen(openScreen: (String) -> Unit) {
+    private fun goToCreateAccountScreen(openScreen: (String) -> Unit) {
         openScreen(CREATE_ACCOUNT_SCREEN)
     }
 
+    private fun showLoading() {
+        setState {
+            copy(
+                isLoading = true,
+            )
+        }
+    }
+
+    private fun hideLoading() {
+        setState {
+            copy(
+                isLoading = false,
+            )
+        }
+    }
+
+    private fun showErrorDialog(errorMessage: String?) {
+        setState {
+            copy(
+                errorMessage = errorMessage
+            )
+        }
+    }
+
+    private fun hideErrorDialog() {
+        setState {
+            copy(
+                errorMessage = null,
+            )
+        }
+    }
 
 }

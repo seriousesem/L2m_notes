@@ -31,7 +31,7 @@ abstract class BaseViewModel<Event : ScreenEvent,  UiState : ViewState> :
     fun launchCatching(block: suspend CoroutineScope.() -> Unit) =
         viewModelScope.launch(
             CoroutineExceptionHandler { _, throwable ->
-                Log.d(ERROR_TAG, throwable.message.orEmpty())
+                throw throwable
             },
             block = block
         )

@@ -63,15 +63,8 @@ class AlchemyStatisticsViewModel @Inject constructor(
                     )
                 setState {
                     copy(
-                        isLoading = this.isLoading,
-                        isShowBottomSheet = this.isShowBottomSheet,
-                        errorMessage = this.errorMessage,
-                        alchemyResults = this.alchemyResults,
                         alchemyResultSlotsQuantity = alchemyResultSlotsQuantity,
                         chartOption = chartOption,
-                        glowColor = this.glowColor,
-                        selectedSlotIndex = this.selectedSlotIndex,
-                        selectedGlowColor = this.selectedGlowColor
                     )
                 }
             }
@@ -86,15 +79,8 @@ class AlchemyStatisticsViewModel @Inject constructor(
                     )
                 setState {
                     copy(
-                        isLoading = this.isLoading,
-                        isShowBottomSheet = this.isShowBottomSheet,
-                        errorMessage = this.errorMessage,
-                        alchemyResults = this.alchemyResults,
                         alchemyResultSlotsQuantity = alchemyResultSlotsQuantity,
-                        chartOption = this.chartOption,
                         glowColor = glowColor,
-                        selectedSlotIndex = this.selectedSlotIndex,
-                        selectedGlowColor = this.selectedGlowColor
                     )
                 }
             }
@@ -114,6 +100,7 @@ class AlchemyStatisticsViewModel @Inject constructor(
 
             AlchemyStatisticsScreenEvent.DELETE_ALCHEMY_RESULT -> {
                 val alchemyResultModel = data as AlchemyResultModel
+                showLoading()
                 deleteAlchemyResult(alchemyResultModel = alchemyResultModel)
             }
 
@@ -153,7 +140,8 @@ class AlchemyStatisticsViewModel @Inject constructor(
 
             AlchemyStatisticsScreenEvent.SAVE_ALCHEMY_RESULT -> {
                 val currentDate = LocalDateTime.now()
-                val formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")
+                val formatter: DateTimeFormatter =
+                    DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss")
                 val formattedDate: String = currentDate.format(formatter)
                 val alchemyResultModel = AlchemyResultModel(
                     id = null,
@@ -161,6 +149,8 @@ class AlchemyStatisticsViewModel @Inject constructor(
                     alchemyGlowColor = viewState.value.selectedGlowColor,
                     alchemyInsertDate = formattedDate
                 )
+                hideBottomSheet()
+                showLoading()
                 saveAlchemyResult(alchemyResultModel = alchemyResultModel)
             }
         }
@@ -183,18 +173,18 @@ class AlchemyStatisticsViewModel @Inject constructor(
         }
     }
 
+    private fun hideLoading() {
+        setState {
+            copy(
+                isLoading = false,
+            )
+        }
+    }
+
     private fun showBottomSheet() {
         setState {
             copy(
-                isLoading = this.isLoading,
                 isShowBottomSheet = true,
-                errorMessage = this.errorMessage,
-                alchemyResults = this.alchemyResults,
-                alchemyResultSlotsQuantity = this.alchemyResultSlotsQuantity,
-                chartOption = this.chartOption,
-                glowColor = this.glowColor,
-                selectedSlotIndex = this.selectedSlotIndex,
-                selectedGlowColor = this.selectedGlowColor
             )
         }
     }
@@ -202,15 +192,7 @@ class AlchemyStatisticsViewModel @Inject constructor(
     private fun hideBottomSheet() {
         setState {
             copy(
-                isLoading = this.isLoading,
                 isShowBottomSheet = false,
-                errorMessage = this.errorMessage,
-                alchemyResults = this.alchemyResults,
-                alchemyResultSlotsQuantity = this.alchemyResultSlotsQuantity,
-                chartOption = this.chartOption,
-                glowColor = this.glowColor,
-                selectedSlotIndex = this.selectedSlotIndex,
-                selectedGlowColor = this.selectedGlowColor
             )
         }
     }
@@ -218,15 +200,7 @@ class AlchemyStatisticsViewModel @Inject constructor(
     private fun showErrorDialog(errorMessage: String?) {
         setState {
             copy(
-                isLoading = this.isLoading,
-                isShowBottomSheet = false,
                 errorMessage = errorMessage,
-                alchemyResults = this.alchemyResults,
-                alchemyResultSlotsQuantity = this.alchemyResultSlotsQuantity,
-                chartOption = this.chartOption,
-                glowColor = this.glowColor,
-                selectedSlotIndex = this.selectedSlotIndex,
-                selectedGlowColor = this.selectedGlowColor
             )
         }
     }
@@ -234,25 +208,18 @@ class AlchemyStatisticsViewModel @Inject constructor(
     private fun hideErrorDialog() {
         setState {
             copy(
-                isLoading = this.isLoading,
-                isShowBottomSheet = false,
                 errorMessage = null,
-                alchemyResults = this.alchemyResults,
-                alchemyResultSlotsQuantity = this.alchemyResultSlotsQuantity,
-                chartOption = this.chartOption,
-                glowColor = this.glowColor,
-                selectedSlotIndex = this.selectedSlotIndex,
-                selectedGlowColor = this.selectedGlowColor
             )
         }
     }
 
     private fun fetchAllAlchemyResults() {
         try {
-            viewModelScope.launch {
+            launchCatching{
                 try {
                     when (val responseResult = repository.fetchAlchemyResults()) {
                         is AppResult.Success -> {
+                            hideLoading()
                             val allAlchemyResults = responseResult.data
                             allAlchemyResults?.let {
                                 val alchemyResultSlotsQuantity =
@@ -263,62 +230,60 @@ class AlchemyStatisticsViewModel @Inject constructor(
                                     )
                                 setState {
                                     copy(
-                                        isLoading = false,
-                                        isShowBottomSheet = false,
-                                        errorMessage = this.errorMessage,
                                         alchemyResults = allAlchemyResults,
                                         alchemyResultSlotsQuantity = alchemyResultSlotsQuantity,
-                                        chartOption = this.chartOption,
-                                        glowColor = this.glowColor,
-                                        selectedSlotIndex = this.selectedSlotIndex,
-                                        selectedGlowColor = this.selectedGlowColor
                                     )
                                 }
                             }
                         }
 
                         is AppResult.Error -> {
+                            hideLoading()
                             showErrorDialog(responseResult.message)
                         }
                     }
                 } catch (e: Exception) {
+                    hideLoading()
                     showErrorDialog(e.message)
                 }
             }
         } catch (e: Exception) {
+            hideLoading()
             showErrorDialog(e.message)
         }
     }
-private fun getAlchemyResultSlotsQuantity(
-    allAlchemyResults: List<AlchemyResultModel>,
-    chartOption: ChartOptions,
-    glowColor: GlowColors
-): List<Int> {
-    val glowColorString = when (glowColor) {
-        GlowColors.GRAY -> GRAY_GLOW_COLOR
-        GlowColors.BLUE -> BLUE_GLOW_COLOR
-        GlowColors.GOLDEN -> GOLDEN_GLOW_COLOR
-    }
-    val groupedResults = when (chartOption) {
-        ChartOptions.SHOW_SLOTS_FOR_GLOW -> {
-            allAlchemyResults
-                .filter { it.alchemyGlowColor == glowColorString }
-                .groupBy { it.alchemySlotIndex}
+
+    private fun getAlchemyResultSlotsQuantity(
+        allAlchemyResults: List<AlchemyResultModel>,
+        chartOption: ChartOptions,
+        glowColor: GlowColors
+    ): List<Int> {
+        val glowColorString = when (glowColor) {
+            GlowColors.GRAY -> GRAY_GLOW_COLOR
+            GlowColors.BLUE -> BLUE_GLOW_COLOR
+            GlowColors.GOLDEN -> GOLDEN_GLOW_COLOR
         }
-        else -> {
-            allAlchemyResults.groupBy { it.alchemySlotIndex }
+        val groupedResults = when (chartOption) {
+            ChartOptions.SHOW_SLOTS_FOR_GLOW -> {
+                allAlchemyResults
+                    .filter { it.alchemyGlowColor == glowColorString }
+                    .groupBy { it.alchemySlotIndex }
+            }
+
+            else -> {
+                allAlchemyResults.groupBy { it.alchemySlotIndex }
+            }
         }
+        val slotQuantities = (1..5).map { index ->
+            groupedResults[index.toString()]?.size ?: 0
+        }
+        return slotQuantities
     }
-    val slotQuantities = (1..5).map { index ->
-        groupedResults[index.toString()]?.size ?: 0
-    }
-    return slotQuantities
-}
 
 
     private fun deleteAlchemyResult(alchemyResultModel: AlchemyResultModel) {
         try {
-            viewModelScope.launch {
+            launchCatching {
                 try {
                     when (val responseResult =
                         repository.deleteAlchemyResult(alchemyResultModel = alchemyResultModel)) {
@@ -327,10 +292,12 @@ private fun getAlchemyResultSlotsQuantity(
                         }
 
                         is AppResult.Error -> {
+                            hideLoading()
                             showErrorDialog(responseResult.message)
                         }
                     }
                 } catch (e: Exception) {
+                    hideLoading()
                     showErrorDialog(e.message)
                 }
             }
@@ -341,7 +308,7 @@ private fun getAlchemyResultSlotsQuantity(
 
     private fun saveAlchemyResult(alchemyResultModel: AlchemyResultModel) {
         try {
-            viewModelScope.launch {
+            launchCatching {
                 try {
                     when (val responseResult =
                         repository.saveAlchemyResult(alchemyResultModel = alchemyResultModel)) {
@@ -350,14 +317,17 @@ private fun getAlchemyResultSlotsQuantity(
                         }
 
                         is AppResult.Error -> {
+                            hideLoading()
                             showErrorDialog(responseResult.message)
                         }
                     }
                 } catch (e: Exception) {
+                    hideLoading()
                     showErrorDialog(e.message)
                 }
             }
         } catch (e: Exception) {
+            hideLoading()
             showErrorDialog(e.message)
         }
     }

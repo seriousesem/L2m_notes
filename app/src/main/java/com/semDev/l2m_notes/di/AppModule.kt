@@ -5,6 +5,7 @@ import com.semDev.l2m_notes.data.firestore.FireStoreService
 import com.semDev.l2m_notes.data.repository.AlchemyCombinationsRepositoryImpl
 import com.semDev.l2m_notes.data.repository.AlchemyStatisticsRepositoryImpl
 import com.semDev.l2m_notes.data.repository.AuthRepositoryImpl
+import com.semDev.l2m_notes.data.service.AuthService
 import com.semDev.l2m_notes.data.storage.BaseLocalStorage
 import com.semDev.l2m_notes.data.storage.LocalStorage
 import com.semDev.l2m_notes.domain.repository.AlchemyCombinationsRepository
@@ -45,6 +46,11 @@ object AppModule {
 
     @Provides
     @Singleton
+    fun provideAuthService(
+    ): AuthService = AuthService()
+
+    @Provides
+    @Singleton
     fun provideAlchemyCombinationsRepository(
     ): AlchemyCombinationsRepository =
         AlchemyCombinationsRepositoryImpl()
@@ -60,8 +66,8 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideAuthRepository(): AuthRepository =
-        AuthRepositoryImpl()
+    fun provideAuthRepository(authService: AuthService): AuthRepository =
+        AuthRepositoryImpl(authService = authService)
 
 
 }

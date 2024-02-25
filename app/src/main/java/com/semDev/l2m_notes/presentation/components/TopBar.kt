@@ -14,8 +14,8 @@ import com.semDev.l2m_notes.presentation.theme.Grey700
 @Composable
 fun TopBar(
     title: String,
-    navigationIcon: @Composable () -> Unit,
-    actionIcon:  @Composable (RowScope.() -> Unit),
+    navigationIcon: @Composable (() -> Unit)? = null,
+    actionIcon:  @Composable (RowScope.() -> Unit)? = null,
 ) {
     CenterAlignedTopAppBar(
         title = {
@@ -25,8 +25,8 @@ fun TopBar(
                 fontWeight = FontWeight.W500,
             )
         },
-        navigationIcon = navigationIcon,
-        actions = actionIcon,
+        navigationIcon = navigationIcon ?: {},
+        actions = actionIcon ?: {},
         colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
             containerColor = Grey700,
             navigationIconContentColor = LightGray,
