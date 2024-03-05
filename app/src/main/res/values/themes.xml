@@ -3,4 +3,12 @@
 
     <style name="Theme.L2mNotes" parent="android:Theme.Material.Light.NoActionBar" />
 
+    <style name="Theme.AppSplashScreen" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@color/white</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/splash_anime_logo</item>
+        <item name="windowSplashScreenAnimationDuration">1000</item>
+        <item name="postSplashScreenTheme">@style/Theme.L2mNotes</item>
+    </style>
+
 </resources>
+

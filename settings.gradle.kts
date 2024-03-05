@@ -13,5 +13,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "L2m Notes"
+rootProject.name = "L2MWiki"
 include(":app")

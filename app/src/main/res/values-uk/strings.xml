@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">L2M notes</string>
+    <string name="app_name">L2M wiki</string>
     <string name="error_dialog_title">Помилка</string>
     <string name="ok">Добре</string>
     <string name="cancel">Відмінити</string>
     <string name="close">Закрити</string>
     <string name="add_alchemy_result">Додати результат</string>
     <string name="save_alchemy_result">Зберегти</string>
-    <string name="home_screen_title">L2M примітки</string>
+
     <string name="alchemy_combinations_title">Комбінації алхімії</string>
     <string name="alchemy_statistics_screen_title">Статистика алхімії</string>
     <string name="normal_alchemy_screen_title">Звичайна алхімія</string>

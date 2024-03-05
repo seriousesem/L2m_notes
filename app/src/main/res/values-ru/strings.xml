@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">L2M notes</string>
+    <string name="app_name">L2M wiki</string>
     <string name="error_dialog_title">Ошибка</string>
     <string name="ok">Хорошо</string>
     <string name="cancel">Отмена</string>
@@ -8,7 +8,6 @@
     <string name="add_alchemy_result">Добавить результат</string>
     <string name="save_alchemy_result">Сохранить</string>
 
-    <string name="home_screen_title">L2M заметки</string>
     <string name="alchemy_combinations_title">Комбинации алхимии</string>
     <string name="alchemy_statistics_screen_title">Статистика алхимии</string>
     <string name="normal_alchemy_screen_title">Обычная алхимия</string>
