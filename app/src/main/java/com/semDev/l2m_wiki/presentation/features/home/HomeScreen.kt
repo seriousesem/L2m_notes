@@ -91,6 +91,7 @@ private fun HomeScreenView(
             openScreen = openScreen,
             showAd = showAd
         )
+
     }
 }
 

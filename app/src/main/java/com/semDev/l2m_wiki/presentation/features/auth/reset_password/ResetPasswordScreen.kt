@@ -13,12 +13,12 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.semDev.l2m_wiki.R
+import com.semDev.l2m_wiki.presentation.components.AnimatedProgressIndicator
 import com.semDev.l2m_wiki.presentation.components.AppElevatedButton
 import com.semDev.l2m_wiki.presentation.components.AuthImage
 import com.semDev.l2m_wiki.presentation.components.BackIconButton
 import com.semDev.l2m_wiki.presentation.components.EmailTextField
 import com.semDev.l2m_wiki.presentation.components.ErrorDialog
-import com.semDev.l2m_wiki.presentation.components.ScreenProgress
 import com.semDev.l2m_wiki.presentation.components.TopBar
 import com.semDev.l2m_wiki.presentation.components.VerticalSpacing
 import com.semDev.l2m_wiki.presentation.theme.White
@@ -50,11 +50,11 @@ fun ResetPasswordScreen(
     ) { padding ->
         val state = viewModel.viewState.value
         if (state.isLoading) {
-            ScreenProgress()
+            AnimatedProgressIndicator()
         } else if (state.errorMessage != null) {
             ErrorDialog(
                 errorMessage = state.errorMessage,
-                action = {
+                confirmButtonAction = {
                     viewModel.setEvent(
                         event = ResetPasswordScreenEvent.HIDE_ERROR_DIALOG,
                         data = null,

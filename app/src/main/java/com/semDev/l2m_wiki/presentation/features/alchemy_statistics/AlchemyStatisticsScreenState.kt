@@ -8,6 +8,7 @@ import com.semDev.l2m_wiki.utils.AlchemySlotIndexes.FIRST_SLOT_INDEX
 data class AlchemyStatisticsScreenState(
     val isLoading: Boolean = false,
     val isShowBottomSheet: Boolean = false,
+    val isShowWarningDialog: Boolean = false,
     val errorMessage: String? = null,
     val alchemyResults: List<AlchemyResultModel> = listOf(),
     val alchemyResultSlotsQuantity: List<Int> = listOf(),
@@ -15,4 +16,5 @@ data class AlchemyStatisticsScreenState(
     val glowColor: GlowColors = GlowColors.GRAY,
     val selectedSlotIndex: String = FIRST_SLOT_INDEX,
     val selectedGlowColor: String = GRAY_GLOW_COLOR,
+    val selectedAlchemyResultModel: AlchemyResultModel?
 ) : ViewState

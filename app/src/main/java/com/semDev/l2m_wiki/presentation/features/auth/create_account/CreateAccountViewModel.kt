@@ -6,6 +6,7 @@ import com.semDev.l2m_wiki.domain.core.AppResult
 import com.semDev.l2m_wiki.domain.repository.AuthRepository
 import com.semDev.l2m_wiki.presentation.core.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import javax.inject.Inject
 
 @HiltViewModel
@@ -52,6 +53,7 @@ class CreateAccountViewModel @Inject constructor(
     private fun createAccount(openAndPopUp: (String, String) -> Unit) {
         try {
             launchCatching {
+                delay(1000L)
                 when (val responseResult =
                     authRepository.createAccount(viewState.value.email, viewState.value.password)) {
                     is AppResult.Success -> {

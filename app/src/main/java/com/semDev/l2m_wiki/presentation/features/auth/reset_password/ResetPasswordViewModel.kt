@@ -6,6 +6,7 @@ import com.semDev.l2m_wiki.domain.core.AppResult
 import com.semDev.l2m_wiki.domain.repository.AuthRepository
 import com.semDev.l2m_wiki.presentation.core.BaseViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import javax.inject.Inject
 
 @HiltViewModel
@@ -42,6 +43,7 @@ class ResetPasswordViewModel @Inject constructor(
     private fun resetPassword(openAndPopUp: (String, String) -> Unit) {
         try {
             launchCatching {
+                delay(1000L)
                 when (val responseResult =
                     authRepository.resetPassword(viewState.value.email,)) {
                     is AppResult.Success -> {

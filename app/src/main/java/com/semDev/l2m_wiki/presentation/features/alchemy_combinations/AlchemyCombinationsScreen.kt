@@ -60,10 +60,10 @@ import com.semDev.l2m_wiki.core.AlchemyType
 import com.semDev.l2m_wiki.domain.model.alchemy_combinations.AlchemyCombinationItem
 import com.semDev.l2m_wiki.domain.model.alchemy_combinations.AlchemyCombinationResultItem
 import com.semDev.l2m_wiki.domain.model.alchemy_combinations.AlchemyCombinations
+import com.semDev.l2m_wiki.presentation.components.AnimatedProgressIndicator
 import com.semDev.l2m_wiki.presentation.components.AppScaffold
 import com.semDev.l2m_wiki.presentation.components.BackIconButton
 import com.semDev.l2m_wiki.presentation.components.HorizontalSpacing
-import com.semDev.l2m_wiki.presentation.components.ScreenProgress
 import com.semDev.l2m_wiki.presentation.components.TopBar
 import com.semDev.l2m_wiki.presentation.components.VerticalSpacing
 import com.semDev.l2m_wiki.presentation.theme.Blue
@@ -106,7 +106,7 @@ fun AlchemyCombinationsScreen(
         },
     ) { contentPadding ->
         if (state.isLoading) {
-            ScreenProgress()
+            AnimatedProgressIndicator()
         } else {
             AlchemyCombinationsScreenView(
                 contentPadding = contentPadding,

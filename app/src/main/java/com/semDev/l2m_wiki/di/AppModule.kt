@@ -1,6 +1,8 @@
 package com.semDev.l2m_wiki.di
 
 import android.content.Context
+import android.content.res.Resources
+import com.semDev.l2m_wiki.core.localization.Localization
 import com.semDev.l2m_wiki.data.firestore.FireStoreService
 import com.semDev.l2m_wiki.data.repository.AlchemyCombinationsRepositoryImpl
 import com.semDev.l2m_wiki.data.repository.AlchemyStatisticsRepositoryImpl
@@ -30,8 +32,17 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideLocalization(@ApplicationContext context: Context): BaseLocalStorage =
-        LocalStorage(context = context)
+    fun provideLocalization(
+        @ApplicationContext context: Context,
+        storage: LocalStorage
+    ): Localization =
+        Localization(context = context, storage = storage)
+
+    @Singleton
+    @Provides
+    fun provideResources(@ApplicationContext context: Context): Resources =
+         context.resources
+
 
     @Singleton
     @Provides

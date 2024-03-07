@@ -1,8 +1,10 @@
 package com.semDev.l2m_wiki.presentation.components
+
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialog
@@ -24,30 +26,48 @@ import com.semDev.l2m_wiki.presentation.theme.Gray
 import com.semDev.l2m_wiki.presentation.theme.VeryLiteBlue
 
 @Composable
-fun ErrorDialog(errorMessage: String, confirmButtonAction: () -> Unit) {
+fun WarningDialog(
+    message: String,
+    confirmButtonAction: () -> Unit,
+    dismissButtonAction: () -> Unit,
+) {
     AlertDialog(
         modifier = Modifier.padding(horizontal = 16.dp),
         onDismissRequest = {},
         confirmButton = {
-            Box(
-                contentAlignment = Alignment.Center,
-                modifier = Modifier.fillMaxWidth()
-            ) {
-                OutlinedButton(
-                    onClick = confirmButtonAction,
-                    colors = ButtonColors(
-                        containerColor = Transparent,
-                        contentColor = Blue,
-                        disabledContainerColor = Gray,
-                        disabledContentColor = Gray
-                    ),
-                    border = BorderStroke(width = 1.dp, color = Blue)
+            OutlinedButton(
+                modifier = Modifier.width(80.dp),
+                onClick = confirmButtonAction,
+                colors = ButtonColors(
+                    containerColor = Transparent,
+                    contentColor = Red,
+                    disabledContainerColor = Gray,
+                    disabledContentColor = Gray
+                ),
+                border = BorderStroke(width = 1.dp, color = Red)
+            )
+            {
+                Text(
+                    text = stringResource(id = R.string.yes).uppercase(),
                 )
-                {
-                    Text(
-                        text = stringResource(id = R.string.close).uppercase(),
-                    )
-                }
+            }
+        },
+        dismissButton = {
+            OutlinedButton(
+                modifier = Modifier.width(96.dp).padding(end = 16.dp),
+                onClick = dismissButtonAction,
+                colors = ButtonColors(
+                    containerColor = Transparent,
+                    contentColor = Blue,
+                    disabledContainerColor = Gray,
+                    disabledContentColor = Gray
+                ),
+                border = BorderStroke(width = 1.dp, color = Blue)
+            )
+            {
+                Text(
+                    text = stringResource(id = R.string.no).uppercase(),
+                )
             }
         },
         title = {
@@ -56,11 +76,12 @@ fun ErrorDialog(errorMessage: String, confirmButtonAction: () -> Unit) {
                 modifier = Modifier.fillMaxWidth()
             ) {
                 Text(
-                    text = stringResource(id = R.string.error_dialog_title),
+                    text = stringResource(id = R.string.warning_dialog_title),
                     fontSize = 20.sp,
                     color = Red,
                 )
-            } },
+            }
+        },
         text = {
             Box(
                 contentAlignment = Alignment.Center,
@@ -69,15 +90,15 @@ fun ErrorDialog(errorMessage: String, confirmButtonAction: () -> Unit) {
                     .padding(horizontal = 8.dp)
             ) {
                 Text(
-                    text = errorMessage,
+                    text = message,
                     modifier = Modifier.verticalScroll(rememberScrollState()),
                     maxLines = 8,
                     textAlign = TextAlign.Center
                 )
-            } },
+            }
+        },
         containerColor = VeryLiteBlue,
         titleContentColor = Blue,
         textContentColor = Blue,
-
-    )
+        )
 }

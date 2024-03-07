@@ -1,7 +1,9 @@
 package com.semDev.l2m_wiki.presentation.features.alchemy_statistics
 
 import android.content.Context
+import android.content.res.Resources
 import android.widget.Toast
+import com.semDev.l2m_wiki.R
 import com.semDev.l2m_wiki.domain.core.AppResult
 import com.semDev.l2m_wiki.domain.model.alchemy_statistics.AlchemyResultModel
 import com.semDev.l2m_wiki.domain.repository.AlchemyStatisticsRepository
@@ -13,13 +15,15 @@ import com.semDev.l2m_wiki.utils.AlchemySlotIndexes
 import com.semDev.l2m_wiki.utils.MapKeys.CONTEXT_KEY
 import com.semDev.l2m_wiki.utils.MapKeys.MESSAGE_KEY
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.delay
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import javax.inject.Inject
 
 @HiltViewModel
 class AlchemyStatisticsViewModel @Inject constructor(
-    private val repository: AlchemyStatisticsRepository
+    private val repository: AlchemyStatisticsRepository,
+    private val resources: Resources,
 ) : BaseViewModel<AlchemyStatisticsScreenEvent, AlchemyStatisticsScreenState>() {
 
     init {
@@ -31,13 +35,15 @@ class AlchemyStatisticsViewModel @Inject constructor(
         return AlchemyStatisticsScreenState(
             isLoading = false,
             isShowBottomSheet = false,
+            isShowWarningDialog = false,
             errorMessage = null,
             alchemyResults = listOf(),
             alchemyResultSlotsQuantity = listOf(),
             chartOption = ChartOptions.SHOW_ALL_SLOTS,
             glowColor = GlowColors.GRAY,
             selectedSlotIndex = AlchemySlotIndexes.FIRST_SLOT_INDEX,
-            selectedGlowColor = GRAY_GLOW_COLOR
+            selectedGlowColor = GRAY_GLOW_COLOR,
+            selectedAlchemyResultModel = null,
         )
     }
 
@@ -96,9 +102,8 @@ class AlchemyStatisticsViewModel @Inject constructor(
             }
 
             AlchemyStatisticsScreenEvent.DELETE_ALCHEMY_RESULT -> {
-                val alchemyResultModel = data as AlchemyResultModel
                 showLoading()
-                deleteAlchemyResult(alchemyResultModel = alchemyResultModel)
+                deleteAlchemyResult()
             }
 
             AlchemyStatisticsScreenEvent.SELECT_SLOT_INDEX -> {
@@ -150,6 +155,15 @@ class AlchemyStatisticsViewModel @Inject constructor(
                 showLoading()
                 saveAlchemyResult(alchemyResultModel = alchemyResultModel)
             }
+
+            AlchemyStatisticsScreenEvent.SHOW_WARNING_DIALOG -> {
+                val alchemyResultModel = data as AlchemyResultModel
+                showWarningDialog(alchemyResultModel = alchemyResultModel)
+            }
+
+            AlchemyStatisticsScreenEvent.HIDE_WARNING_DIALOG -> {
+                hideWarningDialog()
+            }
         }
 
     }
@@ -166,6 +180,24 @@ class AlchemyStatisticsViewModel @Inject constructor(
         setState {
             copy(
                 isLoading = false,
+            )
+        }
+    }
+
+    private fun showWarningDialog(alchemyResultModel: AlchemyResultModel) {
+        setState {
+            copy(
+                isShowWarningDialog = true,
+                selectedAlchemyResultModel = alchemyResultModel
+            )
+        }
+    }
+
+    private fun hideWarningDialog() {
+        setState {
+            copy(
+                isShowWarningDialog = false,
+                selectedAlchemyResultModel = null
             )
         }
     }
@@ -204,8 +236,9 @@ class AlchemyStatisticsViewModel @Inject constructor(
 
     private fun fetchAllAlchemyResults() {
         try {
-            launchCatching{
+            launchCatching {
                 try {
+                    delay(1000L)
                     when (val responseResult = repository.fetchAlchemyResults()) {
                         is AppResult.Success -> {
                             hideLoading()
@@ -270,19 +303,31 @@ class AlchemyStatisticsViewModel @Inject constructor(
     }
 
 
-    private fun deleteAlchemyResult(alchemyResultModel: AlchemyResultModel) {
+    private fun deleteAlchemyResult() {
         try {
             launchCatching {
                 try {
+                    delay(1000L)
                     when (val responseResult =
-                        repository.deleteAlchemyResult(alchemyResultModel = alchemyResultModel)) {
+                        viewState.value.selectedAlchemyResultModel?.let {
+                            repository.deleteAlchemyResult(
+                                alchemyResultModel = it
+                            )
+                        }) {
                         is AppResult.Success -> {
+                            hideWarningDialog()
                             fetchAllAlchemyResults()
                         }
 
                         is AppResult.Error -> {
                             hideLoading()
+                            hideWarningDialog()
                             showErrorDialog(responseResult.message)
+                        }
+
+                        null -> {
+                            hideWarningDialog()
+                            showErrorDialog(resources.getString(R.string.no_item_selected))
                         }
                     }
                 } catch (e: Exception) {
@@ -299,6 +344,7 @@ class AlchemyStatisticsViewModel @Inject constructor(
         try {
             launchCatching {
                 try {
+                    delay(1000L)
                     when (val responseResult =
                         repository.saveAlchemyResult(alchemyResultModel = alchemyResultModel)) {
                         is AppResult.Success -> {

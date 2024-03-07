@@ -48,14 +48,15 @@ import co.yml.charts.ui.barchart.models.BarStyle
 import co.yml.charts.ui.barchart.models.SelectionHighlightData
 import com.semDev.l2m_wiki.R
 import com.semDev.l2m_wiki.domain.model.alchemy_statistics.AlchemyResultModel
+import com.semDev.l2m_wiki.presentation.components.AnimatedProgressIndicator
 import com.semDev.l2m_wiki.presentation.components.AppElevatedButton
 import com.semDev.l2m_wiki.presentation.components.AppScaffold
 import com.semDev.l2m_wiki.presentation.components.BackIconButton
 import com.semDev.l2m_wiki.presentation.components.ErrorDialog
 import com.semDev.l2m_wiki.presentation.components.HorizontalSpacing
-import com.semDev.l2m_wiki.presentation.components.ScreenProgress
 import com.semDev.l2m_wiki.presentation.components.TopBar
 import com.semDev.l2m_wiki.presentation.components.VerticalSpacing
+import com.semDev.l2m_wiki.presentation.components.WarningDialog
 import com.semDev.l2m_wiki.presentation.theme.Blue
 import com.semDev.l2m_wiki.presentation.theme.DarkBlue
 import com.semDev.l2m_wiki.presentation.theme.Golden
@@ -93,11 +94,11 @@ fun AlchemyStatisticsScreen(
         },
     ) { contentPadding ->
         if (state.isLoading) {
-            ScreenProgress()
+            AnimatedProgressIndicator()
         } else if (state.errorMessage != null) {
             ErrorDialog(
                 errorMessage = state.errorMessage,
-                action = {
+                confirmButtonAction = {
                     viewModel.setEvent(
                         event = AlchemyStatisticsScreenEvent.HIDE_ERROR_DIALOG,
                         data = null,
@@ -112,6 +113,10 @@ fun AlchemyStatisticsScreen(
             if (state.isShowBottomSheet) {
                 AddAlchemyResultBottomSheet(viewModel = viewModel)
             }
+            if (state.isShowWarningDialog) {
+                WarningDialogView(viewModel = viewModel)
+            }
+
         }
     }
 }
@@ -465,7 +470,7 @@ private fun AlchemyResultItemView(
                 color = Blue
             )
             Text(
-                text = "Slot - ${alchemyResultModel.alchemySlotIndex}",
+                text = "${stringResource(id = R.string.slot)} - ${alchemyResultModel.alchemySlotIndex}",
                 fontSize = 22.sp,
                 fontWeight = FontWeight.Bold,
                 color = Blue
@@ -473,7 +478,7 @@ private fun AlchemyResultItemView(
             IconButton(
                 onClick = {
                     viewModel.setEvent(
-                        event = AlchemyStatisticsScreenEvent.DELETE_ALCHEMY_RESULT,
+                        event = AlchemyStatisticsScreenEvent.SHOW_WARNING_DIALOG,
                         data = alchemyResultModel
                     )
                 },
@@ -588,6 +593,28 @@ private fun AddAlchemyResultBottomSheet(
         }
     }
 
+}
+
+
+@Composable
+private fun WarningDialogView(
+    viewModel: AlchemyStatisticsViewModel
+) {
+    WarningDialog(
+        message = stringResource(id = R.string.delete_item),
+        confirmButtonAction = {
+            viewModel.setEvent(
+                event = AlchemyStatisticsScreenEvent.DELETE_ALCHEMY_RESULT,
+                data = null,
+            )
+        },
+        dismissButtonAction = {
+            viewModel.setEvent(
+                event = AlchemyStatisticsScreenEvent.HIDE_WARNING_DIALOG,
+                data = null
+            )
+        }
+    )
 }
 
 @Composable

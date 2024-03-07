@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">L2M wiki</string>
-    <string name="error_dialog_title">Помилка</string>
+    <string name="error_dialog_title">Помилка!</string>
+    <string name="warning_dialog_title">Увага!</string>
     <string name="ok">Добре</string>
     <string name="cancel">Відмінити</string>
     <string name="close">Закрити</string>
@@ -61,4 +62,8 @@
     <string name="delete_account">Видалити обліковий запис</string>
     <string name="login_screen_title">Вхід</string>
     <string name="create_account_screen_title">Створити аккаунт</string>
+    <string name="yes">Так</string>
+    <string name="no">Ні</string>
+    <string name="delete_item">Ви впевнені, що хочете видалити цей елемент?</string>
+    <string name="no_item_selected">Не вибрано жодного елемента</string>
 </resources>

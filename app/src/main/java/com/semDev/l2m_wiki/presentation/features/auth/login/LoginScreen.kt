@@ -15,12 +15,12 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.semDev.l2m_wiki.R
+import com.semDev.l2m_wiki.presentation.components.AnimatedProgressIndicator
 import com.semDev.l2m_wiki.presentation.components.AppElevatedButton
 import com.semDev.l2m_wiki.presentation.components.AuthImage
 import com.semDev.l2m_wiki.presentation.components.EmailTextField
 import com.semDev.l2m_wiki.presentation.components.ErrorDialog
 import com.semDev.l2m_wiki.presentation.components.PasswordTextField
-import com.semDev.l2m_wiki.presentation.components.ScreenProgress
 import com.semDev.l2m_wiki.presentation.components.TopBar
 import com.semDev.l2m_wiki.presentation.components.VerticalSpacing
 import com.semDev.l2m_wiki.presentation.theme.White
@@ -44,11 +44,11 @@ fun LoginScreen(
     ) { padding ->
         val state = viewModel.viewState.value
         if (state.isLoading) {
-            ScreenProgress()
+            AnimatedProgressIndicator()
         } else if (state.errorMessage != null) {
             ErrorDialog(
                 errorMessage = state.errorMessage,
-                action = {
+                confirmButtonAction = {
                     viewModel.setEvent(
                         event = LoginScreenEvent.HIDE_ERROR_DIALOG,
                         data = null,
