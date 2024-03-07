@@ -2,6 +2,7 @@ package com.semDev.l2m_wiki.presentation.features.alchemy_statistics
 
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -17,11 +18,9 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ButtonDefaults.outlinedButtonColors
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardColors
-import androidx.compose.material3.ElevatedButton
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -49,6 +48,7 @@ import co.yml.charts.ui.barchart.models.BarStyle
 import co.yml.charts.ui.barchart.models.SelectionHighlightData
 import com.semDev.l2m_wiki.R
 import com.semDev.l2m_wiki.domain.model.alchemy_statistics.AlchemyResultModel
+import com.semDev.l2m_wiki.presentation.components.AppElevatedButton
 import com.semDev.l2m_wiki.presentation.components.AppScaffold
 import com.semDev.l2m_wiki.presentation.components.BackIconButton
 import com.semDev.l2m_wiki.presentation.components.ErrorDialog
@@ -57,8 +57,14 @@ import com.semDev.l2m_wiki.presentation.components.ScreenProgress
 import com.semDev.l2m_wiki.presentation.components.TopBar
 import com.semDev.l2m_wiki.presentation.components.VerticalSpacing
 import com.semDev.l2m_wiki.presentation.theme.Blue
+import com.semDev.l2m_wiki.presentation.theme.DarkBlue
 import com.semDev.l2m_wiki.presentation.theme.Golden
-import com.semDev.l2m_wiki.presentation.theme.Grey700
+import com.semDev.l2m_wiki.presentation.theme.Green
+import com.semDev.l2m_wiki.presentation.theme.LiteBlue
+import com.semDev.l2m_wiki.presentation.theme.LiteGray
+import com.semDev.l2m_wiki.presentation.theme.Red
+import com.semDev.l2m_wiki.presentation.theme.VeryLiteBlue
+import com.semDev.l2m_wiki.presentation.theme.White
 import com.semDev.l2m_wiki.utils.AlchemyGlowColors.BLUE_GLOW_COLOR
 import com.semDev.l2m_wiki.utils.AlchemyGlowColors.GOLDEN_GLOW_COLOR
 import com.semDev.l2m_wiki.utils.AlchemyGlowColors.GRAY_GLOW_COLOR
@@ -71,7 +77,6 @@ import com.semDev.l2m_wiki.utils.AlchemySlotIndexes.THIRD_SLOT_INDEX
 @Composable
 fun AlchemyStatisticsScreen(
     popUpScreen: () -> Unit,
-    openScreen: (String) -> Unit,
     viewModel: AlchemyStatisticsViewModel = hiltViewModel()
 ) {
     BackHandler(onBack = {
@@ -123,7 +128,7 @@ private fun AlchemyStatisticsScreenView(
                 top = contentPadding.calculateTopPadding(),
                 start = 8.dp,
                 end = 8.dp,
-                bottom = contentPadding.calculateBottomPadding()
+                bottom = 8.dp
             ),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -195,11 +200,11 @@ private fun BarChartView(
                     ),
                     color =
                     when (index) {
-                        1 -> Color.DarkGray
-                        2 -> Color.Blue
-                        3 -> Color.Magenta
-                        4 -> Color.Green
-                        5 -> Color.Red
+                        1 -> LiteGray
+                        2 -> Green
+                        3 -> DarkBlue
+                        4 -> Red
+                        5 -> Golden
                         else -> Color.Transparent
                     },
                     label = "$slotString $index",
@@ -213,12 +218,17 @@ private fun BarChartView(
         .startDrawPadding(0.dp)
         .labelData { index -> barData[index].label }
         .bottomPadding(8.dp)
+        .axisLineColor(DarkBlue)
+        .axisLabelColor(Blue)
+        .backgroundColor(White)
         .build()
 
     val yAxisData = AxisData.Builder()
         .steps(1)
         .topPadding(32.dp)
-        .backgroundColor(Color.White)
+        .axisLineColor(DarkBlue)
+        .axisLabelColor(Blue)
+        .backgroundColor(White)
         .axisOffset(
             if (maxRange < 100) 12.dp
             else if (maxRange < 1000) 16.dp
@@ -233,17 +243,22 @@ private fun BarChartView(
         chartData = barData,
         xAxisData = xAxisData,
         yAxisData = yAxisData,
+        backgroundColor = White,
         paddingEnd = 0.dp,
         barStyle = BarStyle(
             paddingBetweenBars = 24.dp,
             selectionHighlightData = SelectionHighlightData(
-                highlightTextBackgroundColor = Color.Transparent,
+                highlightTextBackgroundColor = White,
+                highlightTextColor = Blue,
+                highlightBarColor = Blue,
                 popUpLabel = { _, y -> "$quantityString${y.toInt()}" }
             )
         )
     )
     BarChart(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier
+            .fillMaxSize()
+            .background(White),
         barChartData = barChartData,
     )
 }
@@ -252,7 +267,6 @@ private fun BarChartView(
 private fun ChartSettingsView(
     viewModel: AlchemyStatisticsViewModel
 ) {
-
     Column(modifier = Modifier) {
         Row(
             horizontalArrangement = Arrangement.SpaceAround,
@@ -274,13 +288,14 @@ private fun ChartSettingsView(
                         )
                     },
                     colors = RadioButtonDefaults.colors(
-                        selectedColor = Color.Cyan,
-                        unselectedColor = Color.Gray,
+                        selectedColor = Blue,
+                        unselectedColor = Blue,
                     )
                 )
                 Text(
                     text = stringResource(id = R.string.statistics_for_all_slots),
-                    fontSize = 12.sp
+                    fontSize = 12.sp,
+                    color = Blue
                 )
             }
             Row(
@@ -298,13 +313,14 @@ private fun ChartSettingsView(
                         )
                     },
                     colors = RadioButtonDefaults.colors(
-                        selectedColor = Color.Cyan,
-                        unselectedColor = Color.Gray,
+                        selectedColor = Blue,
+                        unselectedColor = Blue,
                     )
                 )
                 Text(
                     text = stringResource(id = R.string.statistics_for_glow_color),
-                    fontSize = 12.sp
+                    fontSize = 12.sp,
+                    color = Blue
                 )
             }
         }
@@ -330,13 +346,14 @@ private fun ChartSettingsView(
                             )
                         },
                         colors = RadioButtonDefaults.colors(
-                            selectedColor = Color.Cyan,
-                            unselectedColor = Color.Gray,
+                            selectedColor = Blue,
+                            unselectedColor = Blue,
                         )
                     )
                     Text(
                         text = stringResource(id = R.string.gray_glow),
-                        fontSize = 12.sp
+                        fontSize = 12.sp,
+                        color = Blue
                     )
                 }
                 Row(
@@ -353,13 +370,14 @@ private fun ChartSettingsView(
                             )
                         },
                         colors = RadioButtonDefaults.colors(
-                            selectedColor = Color.Cyan,
-                            unselectedColor = Color.Gray,
+                            selectedColor = Blue,
+                            unselectedColor = Blue,
                         )
                     )
                     Text(
                         text = stringResource(id = R.string.blue_glow),
-                        fontSize = 12.sp
+                        fontSize = 12.sp,
+                        color = Blue
                     )
                 }
                 Row(
@@ -376,13 +394,14 @@ private fun ChartSettingsView(
                             )
                         },
                         colors = RadioButtonDefaults.colors(
-                            selectedColor = Color.Cyan,
-                            unselectedColor = Color.Gray,
+                            selectedColor = Blue,
+                            unselectedColor = Blue,
                         )
                     )
                     Text(
                         text = stringResource(id = R.string.golden_glow),
-                        fontSize = 12.sp
+                        fontSize = 12.sp,
+                        color = Blue
                     )
                 }
                 VerticalSpacing(spacing = 8)
@@ -422,8 +441,8 @@ private fun AlchemyResultItemView(
         colors = CardColors(
             containerColor =
             when (alchemyResultModel.alchemyGlowColor) {
-                GRAY_GLOW_COLOR -> Color.LightGray
-                BLUE_GLOW_COLOR -> Blue
+                GRAY_GLOW_COLOR -> LiteGray
+                BLUE_GLOW_COLOR -> LiteBlue
                 GOLDEN_GLOW_COLOR -> Golden
                 else -> Color.LightGray
             },
@@ -443,11 +462,13 @@ private fun AlchemyResultItemView(
             Text(
                 text = alchemyResultModel.alchemyInsertDate.take(10),
                 fontSize = 14.sp,
+                color = Blue
             )
             Text(
                 text = "Slot - ${alchemyResultModel.alchemySlotIndex}",
-                fontSize = 20.sp,
-                fontWeight = FontWeight.Bold
+                fontSize = 22.sp,
+                fontWeight = FontWeight.Bold,
+                color = Blue
             )
             IconButton(
                 onClick = {
@@ -463,7 +484,7 @@ private fun AlchemyResultItemView(
                     modifier = Modifier
                         .padding(0.dp)
                         .size(24.dp),
-                    tint = Color.Red
+                    tint = Red
                 )
             }
         }
@@ -474,40 +495,17 @@ private fun AlchemyResultItemView(
 private fun AddAlchemyResultButton(
     viewModel: AlchemyStatisticsViewModel
 ) {
-    Row(
-        modifier = Modifier
-    ) {
-        Box(
-            modifier = Modifier
-                .weight(0.2f)
-        )
-        ElevatedButton(
-            onClick = {
-                viewModel.setEvent(
-                    event = AlchemyStatisticsScreenEvent.SHOW_BOTTOM_SHEET,
-                    data = null,
-                )
-            },
-            colors = ButtonDefaults.elevatedButtonColors(
-                containerColor = Color.Cyan
-            ),
-            modifier = Modifier
-                .weight(0.6f)
-        )
-        {
-            Text(
-                text = stringResource(id = R.string.add_alchemy_result).uppercase(),
-                fontSize = 14.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color.DarkGray,
-                modifier = Modifier.padding(vertical = 4.dp)
+    AppElevatedButton(
+        modifier = Modifier,
+        label = stringResource(id = R.string.add_alchemy_result).uppercase(),
+        enabled = true,
+        buttonAction = {
+            viewModel.setEvent(
+                event = AlchemyStatisticsScreenEvent.SHOW_BOTTOM_SHEET,
+                data = null,
             )
         }
-        Box(
-            modifier = Modifier
-                .weight(0.2f)
-        )
-    }
+    )
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -522,27 +520,27 @@ private fun AddAlchemyResultBottomSheet(
                 data = null,
             )
         },
-        containerColor = Grey700,
+        containerColor = VeryLiteBlue,
         sheetState = rememberModalBottomSheetState(skipPartiallyExpanded = true),
-        modifier = Modifier.fillMaxSize()
+        modifier = Modifier,
+        scrimColor = Color.Transparent.copy(alpha = 0.8f)
     ) {
         Column(
-            verticalArrangement = Arrangement.Center,
+            verticalArrangement = Arrangement.Top,
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
                 .padding(8.dp)
-                .fillMaxSize()
         )
         {
             Text(
                 text = stringResource(id = R.string.select_slot_index),
-                fontSize = 18.sp,
+                fontSize = 20.sp,
                 fontWeight = FontWeight.Bold,
-                color = Color.LightGray,
+                color = Blue,
                 modifier = Modifier.padding(bottom = 24.dp)
             )
             Row(
-                modifier = Modifier.padding(bottom = 48.dp)
+                modifier = Modifier.padding(bottom = 32.dp)
             ) {
                 for (index in 0..4) {
                     HorizontalSpacing(spacing = 8)
@@ -562,13 +560,13 @@ private fun AddAlchemyResultBottomSheet(
             }
             Text(
                 text = stringResource(id = R.string.select_glow_color),
-                fontSize = 18.sp,
+                fontSize = 20.sp,
                 fontWeight = FontWeight.Bold,
-                color = Color.LightGray,
+                color = Blue,
                 modifier = Modifier.padding(bottom = 24.dp)
             )
             Row(
-                modifier = Modifier.padding(bottom = 64.dp),
+                modifier = Modifier.padding(bottom = 32.dp),
                 horizontalArrangement = Arrangement.Center
             ) {
                 for (index in 0..2) {
@@ -586,6 +584,7 @@ private fun AddAlchemyResultBottomSheet(
                 }
             }
             SaveAlchemyResultButton(viewModel = viewModel)
+            VerticalSpacing(spacing = 40)
         }
     }
 
@@ -609,16 +608,16 @@ private fun SlotIndexButton(
         contentPadding = PaddingValues(0.dp),
         colors = outlinedButtonColors(
             containerColor = Color.Transparent,
-            contentColor = Color.LightGray,
+            contentColor = Blue,
         ),
         border = BorderStroke(
             width = 1.dp,
-            color = if (viewModel.viewState.value.selectedSlotIndex == index) Color.Red else Color.LightGray
+            color = if (viewModel.viewState.value.selectedSlotIndex == index) Color.Red else Blue
         )
     ) {
         Text(
             text = index,
-            fontSize = 22.sp,
+            fontSize = 24.sp,
             fontWeight = FontWeight.Bold
         )
     }
@@ -643,15 +642,15 @@ private fun GlowColorButton(
         colors = outlinedButtonColors(
             containerColor =
             when (glowColor) {
-                GRAY_GLOW_COLOR -> Color.LightGray
-                BLUE_GLOW_COLOR -> Blue
+                GRAY_GLOW_COLOR -> LiteGray
+                BLUE_GLOW_COLOR -> LiteBlue
                 GOLDEN_GLOW_COLOR -> Golden
-                else -> Color.LightGray
+                else -> LiteGray
             },
         ),
         border = BorderStroke(
             width = 1.dp,
-            color = if (viewModel.viewState.value.selectedGlowColor == glowColor) Color.Red else Color.Transparent
+            color = if (viewModel.viewState.value.selectedGlowColor == glowColor) Color.Red else Blue
         )
     ) {}
 }
@@ -660,38 +659,15 @@ private fun GlowColorButton(
 private fun SaveAlchemyResultButton(
     viewModel: AlchemyStatisticsViewModel
 ) {
-    Row(
-        modifier = Modifier
-    ) {
-        Box(
-            modifier = Modifier
-                .weight(0.2f)
-        )
-        ElevatedButton(
-            onClick = {
-                viewModel.setEvent(
-                    event = AlchemyStatisticsScreenEvent.SAVE_ALCHEMY_RESULT,
-                    data = null
-                )
-            },
-            colors = ButtonDefaults.elevatedButtonColors(
-                containerColor = Color.Cyan
-            ),
-            modifier = Modifier
-                .weight(0.6f)
-        )
-        {
-            Text(
-                text = stringResource(id = R.string.save_alchemy_result).uppercase(),
-                fontSize = 14.sp,
-                fontWeight = FontWeight.Bold,
-                color = Color.DarkGray,
-                modifier = Modifier.padding(vertical = 4.dp)
+    AppElevatedButton(
+        modifier = Modifier,
+        label = stringResource(id = R.string.save_alchemy_result).uppercase(),
+        enabled = true,
+        buttonAction = {
+            viewModel.setEvent(
+                event = AlchemyStatisticsScreenEvent.SAVE_ALCHEMY_RESULT,
+                data = null
             )
         }
-        Box(
-            modifier = Modifier
-                .weight(0.2f)
-        )
-    }
+    )
 }

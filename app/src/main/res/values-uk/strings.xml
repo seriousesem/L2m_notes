@@ -51,4 +51,14 @@
     <string name="statistics_for_glow_color">За кольором свічення</string>
     <string name="select_slot_index">Оберіть номер слота</string>
     <string name="select_glow_color">Оберіть колір свічення</string>
+    <string name="password">Пароль</string>
+    <string name="login">Вхід</string>
+    <string name="create_account">Створити аккаунт</string>
+    <string name="reset_password">Скинути пароль</string>
+    <string name="create_account_description">Немає облікового запису? Натисніть тут, щоб створити.</string>
+    <string name="reset_password_description">Натисніть тут, щоб скинути пароль.</string>
+    <string name="logout">Вихід</string>
+    <string name="delete_account">Видалити обліковий запис</string>
+    <string name="login_screen_title">Вхід</string>
+    <string name="create_account_screen_title">Створити аккаунт</string>
 </resources>

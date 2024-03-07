@@ -56,5 +56,15 @@
     <string name="statistics_for_glow_color">По цвету свечения</string>
     <string name="select_slot_index">Выберите номер слота</string>
     <string name="select_glow_color">Выберите цвет свечения</string>
+    <string name="password">Пароль</string>
+    <string name="login">Вход</string>
+    <string name="create_account">Создать аккаунт</string>
+    <string name="reset_password">Сбросить пароль</string>
+    <string name="create_account_description">Нет аккаунта? Нажми здесь, чтобы создать.</string>
+    <string name="reset_password_description">Нажмите здесь, чтобы сбросить пароль.</string>
+    <string name="logout">Выход</string>
+    <string name="delete_account">Удалить аккаунт</string>
+    <string name="login_screen_title">Вход</string>
+    <string name="create_account_screen_title">Создать аккаунт</string>
 
 </resources>

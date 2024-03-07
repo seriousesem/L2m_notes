@@ -22,7 +22,7 @@ fun TopBar(
         title = {
             Text(
                 text = title.uppercase(Locale.ROOT),
-                fontSize = 20.sp,
+                fontSize = 18.sp,
                 fontWeight = FontWeight.Bold,
                 color = WhiteBlue
             )

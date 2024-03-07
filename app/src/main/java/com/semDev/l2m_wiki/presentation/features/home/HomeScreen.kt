@@ -108,7 +108,7 @@ private fun MenuItemView(
             openScreen(route)
         },
         modifier = Modifier
-            .height(150.dp),
+            .height(120.dp),
         colors = CardDefaults.cardColors(
             containerColor = WhiteBlue,
             contentColor = Blue
@@ -123,7 +123,7 @@ private fun MenuItemView(
             horizontalArrangement = Arrangement.SpaceEvenly
         ) {
             Icon(
-                modifier = Modifier.size(100.dp),
+                modifier = Modifier.size(80.dp),
                 painter = painterResource(id = resId),
                 contentDescription = "",
                 tint = Blue

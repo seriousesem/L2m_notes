@@ -6,7 +6,10 @@ import com.semDev.l2m_wiki.domain.model.alchemy_combinations.AlchemyCombinationI
 import com.semDev.l2m_wiki.domain.model.alchemy_combinations.AlchemyCombinationResultItem
 import com.semDev.l2m_wiki.domain.model.alchemy_combinations.AlchemyCombinationResults
 import com.semDev.l2m_wiki.domain.model.alchemy_combinations.AlchemyCombinations
-import com.semDev.l2m_wiki.presentation.theme.Blue
+import com.semDev.l2m_wiki.presentation.theme.DarkBlue
+import com.semDev.l2m_wiki.presentation.theme.Green
+import com.semDev.l2m_wiki.presentation.theme.LiteGray
+import com.semDev.l2m_wiki.presentation.theme.Red
 import com.semDev.l2m_wiki.utils.ImageAssets
 
 
@@ -19,27 +22,29 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Green,
+                        slotColor = Green,
                         description = R.string.any_upgraded_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 )
@@ -75,27 +80,30 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 )
@@ -131,27 +139,31 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 )
@@ -187,27 +199,32 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                 )
@@ -243,108 +260,126 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "1/0",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_1_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "1/0",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_1_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "6/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_6_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "6/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_6_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "7/w",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_7_w,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "5/4",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_5_4,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
@@ -380,108 +415,125 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "3/0",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_3_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "2/0",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_2_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "7/4",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_7_4,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "6/4",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_6_4,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "1/0",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_1_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "6/4",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_6_4,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "6/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_6_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                 ),
@@ -517,108 +569,125 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "8/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_8_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "7/4",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_7_4,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "3/0",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_3_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "1/0",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_1_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "7/4",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_7_4,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "7/4",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_7_4,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "5/0",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_5_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
@@ -654,81 +723,93 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "8/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_8_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "8/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_8_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "5/0",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_5_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "2/0",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_2_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "7/4",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_7_4,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "7/4",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_7_4,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "7/4",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_7_4,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
@@ -764,81 +845,90 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Green,
+                        slotColor = Green,
                         description = R.string.any_upgraded_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "8/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_8_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "8/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_8_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "8/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_8_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "5/0",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_5_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "8/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_8_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                 ),
@@ -874,81 +964,89 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "8/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_8_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "8/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_8_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "7/4",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_7_4,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "8/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_8_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "8/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_8_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "3/0",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_3_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "3/0",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_3_0,
                     ),
                 ),
@@ -984,27 +1082,28 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "8/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_8_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
@@ -1040,81 +1139,84 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "8/w",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_8_w,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "8/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_8_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "3/0",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_3_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "8/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_8_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "7/4",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_7_4,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "8/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_8_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
@@ -1150,81 +1252,81 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "8/w",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_8_w,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "3/0",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_3_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "7/4",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_7_4,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
@@ -1260,81 +1362,81 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "8/w",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_8_w,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "3/0",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_3_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "7/4",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_7_4,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                 ),
@@ -1370,27 +1472,28 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "4/0",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_4_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "8/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_8_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
@@ -1426,27 +1529,27 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "4/0",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_4_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                 ),
@@ -1482,17 +1585,18 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "5/0",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_5_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
@@ -1502,34 +1606,34 @@ object AlchemyCombinationsList {
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "4/0",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_4_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "4/0",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_4_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "4/0",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_4_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "4/0",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_4_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                 ),
@@ -1565,27 +1669,27 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "5/0",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_5_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                 ),
@@ -1621,12 +1725,13 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "6/0",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_6_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
@@ -1636,12 +1741,12 @@ object AlchemyCombinationsList {
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                 ),
@@ -1767,27 +1872,30 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 )
@@ -1823,27 +1931,31 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 )
@@ -1879,27 +1991,31 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                 )
@@ -1935,108 +2051,126 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "1/0",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_1_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "1/0",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_1_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "6/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_6_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "6/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_6_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "7/w",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_7_w,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "5/4",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_5_4,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
@@ -2161,54 +2295,60 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "7/4",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_7_4,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
@@ -2273,81 +2413,89 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "8/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_8_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "8/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_8_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "7/4",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_7_4,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "8/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_8_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "8/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_8_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "3/0",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_3_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "3/0",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_3_0,
                     ),
                 ),
@@ -2383,27 +2531,28 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "8/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_8_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
@@ -2439,81 +2588,84 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "8/w",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_8_w,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "8/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_8_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "3/0",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_3_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "8/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_8_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "7/4",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_7_4,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "8/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_8_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
@@ -2549,81 +2701,81 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "8/w",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_8_w,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "3/0",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_3_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "7/4",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_7_4,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     )
                 ),
@@ -2659,81 +2811,81 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "8/w",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_8_w,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "3/0",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_3_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "7/4",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_7_4,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                 ),
@@ -2769,27 +2921,28 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "4/0",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_4_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "8/6",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.rare_8_6,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                 ),
@@ -2825,27 +2978,27 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "4/0",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_4_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                 ),
@@ -2881,54 +3034,56 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "5/0",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_5_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Blue,
+                        slotColor = DarkBlue
+                        ,
                         description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                 ),
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "4/0",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_4_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "4/0",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_4_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "4/0",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_4_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "4/0",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_4_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                 ),
@@ -2964,27 +3119,27 @@ object AlchemyCombinationsList {
                 listOf(
                     AlchemyCombinationItem(
                         itemEnchant = "5/0",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.heroic_5_0,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.Red,
+                        slotColor = Red,
                         description = R.string.any_heroic_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = Color.LightGray,
+                        slotColor = LiteGray,
                         description = R.string.empty_slot,
                     ),
                 ),

@@ -29,9 +29,9 @@
               <option name="connection">
                 <ConnectionSetting>
                   <option name="appId" value="com.semDev.l2m_wiki" />
-                  <option name="mobileSdkAppId" value="1:805915489982:android:3e9b33a4c95236dea7d0ef" />
-                  <option name="projectId" value="l2m-notes-8a602" />
-                  <option name="projectNumber" value="805915489982" />
+                  <option name="mobileSdkAppId" value="1:540416572937:android:86d64f364f46d2233682d8" />
+                  <option name="projectId" value="l2m-wiki" />
+                  <option name="projectNumber" value="540416572937" />
                 </ConnectionSetting>
               </option>
               <option name="signal" value="SIGNAL_UNSPECIFIED" />
