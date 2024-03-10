@@ -1,10 +1,13 @@
 package com.semDev.l2m_wiki.presentation.features.auth.reset_password
-
+import android.content.Context
+import android.widget.Toast
+import com.semDev.l2m_wiki.R
 import com.semDev.l2m_wiki.core.navigation.LOGIN_SCREEN
 import com.semDev.l2m_wiki.core.navigation.RESET_PASSWORD_SCREEN
 import com.semDev.l2m_wiki.domain.core.AppResult
 import com.semDev.l2m_wiki.domain.repository.AuthRepository
 import com.semDev.l2m_wiki.presentation.core.BaseViewModel
+import com.semDev.l2m_wiki.utils.MapKeys
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import javax.inject.Inject
@@ -20,12 +23,12 @@ class ResetPasswordViewModel @Inject constructor(
         );
     }
 
-    @Suppress("UNCHECKED_CAST")
-    override fun <T> setEvent(event: ResetPasswordScreenEvent, data: T) {
+   override fun <T> setEvent(event: ResetPasswordScreenEvent, data: T) {
         when (event) {
             ResetPasswordScreenEvent.CREATE_ACCOUNT -> {
                 showLoading()
-                resetPassword(data as (String, String) -> Unit)
+                val dataMap = data as Map<*, *>
+                resetPassword(dataMap = dataMap)
             }
             ResetPasswordScreenEvent.UPDATE_EMAIL -> updateEmail(data as String)
             ResetPasswordScreenEvent.HIDE_ERROR_DIALOG -> hideErrorDialog()
@@ -39,8 +42,8 @@ class ResetPasswordViewModel @Inject constructor(
             )
         }
     }
-
-    private fun resetPassword(openAndPopUp: (String, String) -> Unit) {
+    @Suppress("UNCHECKED_CAST")
+    private fun resetPassword(dataMap: Map<*, *>) {
         try {
             launchCatching {
                 delay(1000L)
@@ -48,7 +51,10 @@ class ResetPasswordViewModel @Inject constructor(
                     authRepository.resetPassword(viewState.value.email,)) {
                     is AppResult.Success -> {
                         hideLoading()
-                        openAndPopUp(LOGIN_SCREEN, RESET_PASSWORD_SCREEN)
+                        val context = dataMap[MapKeys.CONTEXT_KEY] as Context
+                        val action = dataMap[MapKeys.ACTION_KEY] as (String, String) -> Unit
+                        Toast.makeText(context, context.getText(R.string.password_successfully_reset), Toast.LENGTH_SHORT).show()
+                        action(LOGIN_SCREEN, RESET_PASSWORD_SCREEN)
                     }
 
                     is AppResult.Error -> {

@@ -1,5 +1,6 @@
 package com.semDev.l2m_wiki.presentation.features.auth.create_account
 
+import android.content.Context
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -9,6 +10,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -23,6 +25,7 @@ import com.semDev.l2m_wiki.presentation.components.PasswordTextField
 import com.semDev.l2m_wiki.presentation.components.TopBar
 import com.semDev.l2m_wiki.presentation.components.VerticalSpacing
 import com.semDev.l2m_wiki.presentation.theme.White
+import com.semDev.l2m_wiki.utils.MapKeys
 
 
 @Composable
@@ -32,6 +35,7 @@ fun CreateAccountScreen(
     modifier: Modifier = Modifier,
     viewModel: CreateAccountViewModel = hiltViewModel()
 ) {
+    val context = LocalContext.current
     BackHandler(onBack = {
         popUpScreen()
     })
@@ -68,6 +72,7 @@ fun CreateAccountScreen(
                 padding = padding,
                 viewModel = viewModel,
                 openAndPopUp = openAndPopUp,
+                context = context,
             )
         }
     }
@@ -77,6 +82,7 @@ fun CreateAccountScreen(
 fun CreateAccountScreenView(
     modifier: Modifier,
     padding: PaddingValues,
+    context: Context,
     viewModel: CreateAccountViewModel,
     openAndPopUp: (String, String) -> Unit,
 ) {
@@ -118,7 +124,10 @@ fun CreateAccountScreenView(
             buttonAction = {
                 viewModel.setEvent(
                     event = CreateAccountScreenEvent.CREATE_ACCOUNT,
-                    data = openAndPopUp
+                    data = mapOf(
+                        MapKeys.CONTEXT_KEY to context,
+                        MapKeys.ACTION_KEY to openAndPopUp
+                    )
                 )
             }
         )

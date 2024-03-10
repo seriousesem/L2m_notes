@@ -76,7 +76,8 @@ class AuthService @Inject constructor() {
 
     suspend fun deleteAccount() {
         try {
-            Firebase.auth.currentUser!!.delete().await()
+            val currentUser = Firebase.auth.currentUser
+            currentUser?.delete()?.await()
         } catch (e: FirebaseAuthException) {
             throw e
         }

@@ -57,6 +57,7 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.semDev.l2m_wiki.R
 import com.semDev.l2m_wiki.core.AlchemyType
+import com.semDev.l2m_wiki.core.navigation.SETTINGS_SCREEN
 import com.semDev.l2m_wiki.domain.model.alchemy_combinations.AlchemyCombinationItem
 import com.semDev.l2m_wiki.domain.model.alchemy_combinations.AlchemyCombinationResultItem
 import com.semDev.l2m_wiki.domain.model.alchemy_combinations.AlchemyCombinations
@@ -64,6 +65,7 @@ import com.semDev.l2m_wiki.presentation.components.AnimatedProgressIndicator
 import com.semDev.l2m_wiki.presentation.components.AppScaffold
 import com.semDev.l2m_wiki.presentation.components.BackIconButton
 import com.semDev.l2m_wiki.presentation.components.HorizontalSpacing
+import com.semDev.l2m_wiki.presentation.components.SettingsIconButton
 import com.semDev.l2m_wiki.presentation.components.TopBar
 import com.semDev.l2m_wiki.presentation.components.VerticalSpacing
 import com.semDev.l2m_wiki.presentation.theme.Blue
@@ -77,6 +79,7 @@ import com.semDev.l2m_wiki.utils.MapKeys.MESSAGE_KEY
 @Composable
 fun AlchemyCombinationsScreen(
     popUpScreen: () -> Unit,
+    openScreen: (String) -> Unit,
     viewModel: AlchemyCombinationsViewModel = hiltViewModel()
 ) {
     val context = LocalContext.current
@@ -91,6 +94,11 @@ fun AlchemyCombinationsScreen(
                 navigationIcon = {
                     BackIconButton(action = popUpScreen)
                 },
+                actionIcon = {
+                    SettingsIconButton(action = {
+                        openScreen(SETTINGS_SCREEN)
+                    })
+                }
             )
         },
         bottomBar = {

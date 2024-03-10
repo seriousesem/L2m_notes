@@ -14,6 +14,7 @@ object ImageAssets {
 object MapKeys {
     const val CONTEXT_KEY = "context_key"
     const val MESSAGE_KEY = "message_key"
+    const val ACTION_KEY = "action_key"
 }
 
 object AlchemyStatisticsMapKeys {

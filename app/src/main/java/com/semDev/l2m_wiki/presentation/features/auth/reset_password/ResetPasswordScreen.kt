@@ -1,5 +1,6 @@
 package com.semDev.l2m_wiki.presentation.features.auth.reset_password
 
+import android.content.Context
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
@@ -9,6 +10,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -22,6 +24,7 @@ import com.semDev.l2m_wiki.presentation.components.ErrorDialog
 import com.semDev.l2m_wiki.presentation.components.TopBar
 import com.semDev.l2m_wiki.presentation.components.VerticalSpacing
 import com.semDev.l2m_wiki.presentation.theme.White
+import com.semDev.l2m_wiki.utils.MapKeys
 
 
 @Composable
@@ -31,6 +34,7 @@ fun ResetPasswordScreen(
     modifier: Modifier = Modifier,
     viewModel: ResetPasswordViewModel = hiltViewModel()
 ) {
+    val context = LocalContext.current
     BackHandler(onBack = {
         popUpScreen()
     })
@@ -67,6 +71,7 @@ fun ResetPasswordScreen(
                 padding = padding,
                 viewModel = viewModel,
                 openAndPopUp = openAndPopUp,
+                context = context,
             )
         }
     }
@@ -76,6 +81,7 @@ fun ResetPasswordScreen(
 fun ResetPasswordScreenView(
     modifier: Modifier,
     padding: PaddingValues,
+    context: Context,
     viewModel: ResetPasswordViewModel,
     openAndPopUp: (String, String) -> Unit,
 ) {
@@ -106,7 +112,10 @@ fun ResetPasswordScreenView(
             buttonAction = {
                 viewModel.setEvent(
                     event = ResetPasswordScreenEvent.CREATE_ACCOUNT,
-                    data = openAndPopUp
+                    data = mapOf(
+                        MapKeys.CONTEXT_KEY to context,
+                        MapKeys.ACTION_KEY to openAndPopUp
+                    )
                 )
             }
         )

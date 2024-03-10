@@ -9,10 +9,12 @@
     <string name="add_alchemy_result">Додати результат</string>
     <string name="save_alchemy_result">Зберегти</string>
 
+    <string name="you_want_delete_account">Ви впевнені, що хочете повністю видалити акаунт? Всі дані будуть втрачені.</string>
     <string name="alchemy_combinations_title">Комбінації алхімії</string>
     <string name="alchemy_statistics_screen_title">Статистика алхімії</string>
     <string name="normal_alchemy_screen_title">Звичайна алхімія</string>
     <string name="top_alchemy_screen_title">Вища алхімія</string>
+    <string name="settings_screen_title">Налаштування</string>
     <string name="stage_of_alchemy">Етап алхімії:</string>
     <string name="alchemy_result_combination_title">Результат алхімії</string>
     <string name="any_rare_item">Будь-який рідкісний предмет</string>
@@ -59,11 +61,14 @@
     <string name="create_account_description">Немає облікового запису? Натисніть тут, щоб створити.</string>
     <string name="reset_password_description">Натисніть тут, щоб скинути пароль.</string>
     <string name="logout">Вихід</string>
-    <string name="delete_account">Видалити обліковий запис</string>
+    <string name="delete_account">Видалити акаунт</string>
     <string name="login_screen_title">Вхід</string>
     <string name="create_account_screen_title">Створити аккаунт</string>
     <string name="yes">Так</string>
     <string name="no">Ні</string>
     <string name="delete_item">Ви впевнені, що хочете видалити цей елемент?</string>
     <string name="no_item_selected">Не вибрано жодного елемента</string>
+    <string name="account">Акаунт</string>
+    <string name="account_successfully_create">Акаунт успішну створено</string>
+    <string name="password_successfully_reset">Пароль успішну скинуто</string>
 </resources>

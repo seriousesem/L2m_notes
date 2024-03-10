@@ -29,7 +29,9 @@ import androidx.compose.ui.unit.sp
 import com.semDev.l2m_wiki.R
 import com.semDev.l2m_wiki.core.navigation.ALCHEMY_COMBINATIONS_SCREEN
 import com.semDev.l2m_wiki.core.navigation.ALCHEMY_STATISTICS_SCREEN
+import com.semDev.l2m_wiki.core.navigation.SETTINGS_SCREEN
 import com.semDev.l2m_wiki.presentation.components.AppScaffold
+import com.semDev.l2m_wiki.presentation.components.SettingsIconButton
 import com.semDev.l2m_wiki.presentation.components.TopBar
 import com.semDev.l2m_wiki.presentation.components.VerticalSpacing
 import com.semDev.l2m_wiki.presentation.theme.Blue
@@ -37,7 +39,7 @@ import com.semDev.l2m_wiki.presentation.theme.WhiteBlue
 import com.semDev.l2m_wiki.utils.findActivity
 
 @Composable
-fun NewsScreen(
+fun HomeScreen(
     openScreen: (String) -> Unit,
     showAd: () -> Unit
 ) {
@@ -49,6 +51,11 @@ fun NewsScreen(
         topBar = {
             TopBar(
                 title = stringResource(id = R.string.home_screen_title),
+                actionIcon = {
+                    SettingsIconButton(action =
+                    { openScreen(SETTINGS_SCREEN) }
+                    )
+                }
             )
         },
     ) { contentPadding ->

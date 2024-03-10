@@ -47,6 +47,7 @@ import co.yml.charts.ui.barchart.models.BarData
 import co.yml.charts.ui.barchart.models.BarStyle
 import co.yml.charts.ui.barchart.models.SelectionHighlightData
 import com.semDev.l2m_wiki.R
+import com.semDev.l2m_wiki.core.navigation.SETTINGS_SCREEN
 import com.semDev.l2m_wiki.domain.model.alchemy_statistics.AlchemyResultModel
 import com.semDev.l2m_wiki.presentation.components.AnimatedProgressIndicator
 import com.semDev.l2m_wiki.presentation.components.AppElevatedButton
@@ -54,6 +55,7 @@ import com.semDev.l2m_wiki.presentation.components.AppScaffold
 import com.semDev.l2m_wiki.presentation.components.BackIconButton
 import com.semDev.l2m_wiki.presentation.components.ErrorDialog
 import com.semDev.l2m_wiki.presentation.components.HorizontalSpacing
+import com.semDev.l2m_wiki.presentation.components.SettingsIconButton
 import com.semDev.l2m_wiki.presentation.components.TopBar
 import com.semDev.l2m_wiki.presentation.components.VerticalSpacing
 import com.semDev.l2m_wiki.presentation.components.WarningDialog
@@ -78,6 +80,7 @@ import com.semDev.l2m_wiki.utils.AlchemySlotIndexes.THIRD_SLOT_INDEX
 @Composable
 fun AlchemyStatisticsScreen(
     popUpScreen: () -> Unit,
+    openScreen: (String) -> Unit,
     viewModel: AlchemyStatisticsViewModel = hiltViewModel()
 ) {
     BackHandler(onBack = {
@@ -90,6 +93,11 @@ fun AlchemyStatisticsScreen(
             navigationIcon = {
                 BackIconButton(action = popUpScreen)
             },
+            actionIcon = {
+                SettingsIconButton(action = {
+                    openScreen(SETTINGS_SCREEN)
+                })
+            }
         )
         },
     ) { contentPadding ->

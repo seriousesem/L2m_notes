@@ -9,6 +9,7 @@ import androidx.compose.material3.ButtonColors
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.semDev.l2m_wiki.presentation.theme.Blue
@@ -21,7 +22,8 @@ fun AppElevatedButton(
     modifier: Modifier,
     label: String,
     enabled: Boolean,
-    buttonAction: () -> Unit
+    buttonAction: () -> Unit,
+    color: Color? = null,
 ){
     return  Button(
         onClick = { buttonAction()},
@@ -31,7 +33,7 @@ fun AppElevatedButton(
             .defaultMinSize(minHeight = 48.dp),
         shape = RoundedCornerShape(12.dp),
         colors = ButtonColors(
-            containerColor = Blue,
+            containerColor = color ?: Blue,
             contentColor = WhiteBlue,
             disabledContentColor = WhiteBlue,
             disabledContainerColor = Gray

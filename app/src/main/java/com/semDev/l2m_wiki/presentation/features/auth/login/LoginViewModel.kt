@@ -78,10 +78,22 @@ class LoginViewModel @Inject constructor(
     }
 
     private fun goToCreateAccountScreen(openScreen: (String) -> Unit) {
+        setState {
+            copy(
+                email = "",
+                password = "",
+            )
+        }
         openScreen(CREATE_ACCOUNT_SCREEN)
     }
 
     private fun goToResetPasswordScreen(openScreen: (String) -> Unit) {
+        setState {
+            copy(
+                email = "",
+                password = "",
+            )
+        }
         openScreen(RESET_PASSWORD_SCREEN)
     }
 

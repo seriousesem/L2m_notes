@@ -9,11 +9,13 @@
     <string name="add_alchemy_result">Добавить результат</string>
     <string name="save_alchemy_result">Сохранить</string>
 
+    <string name="you_want_delete_account">Вы уверены, что хотите полностью удалить аккаунт? Все данные будут утрачены.</string>
     <string name="alchemy_combinations_title">Комбинации алхимии</string>
     <string name="alchemy_statistics_screen_title">Статистика алхимии</string>
     <string name="normal_alchemy_screen_title">Обычная алхимия</string>
     <string name="top_alchemy_screen_title">Высшая алхимия</string>
 
+    <string name="settings_screen_title">Настройки</string>
     <string name="stage_of_alchemy">Этап алхимии: </string>
     <string name="alchemy_result_combination_title">Результат алхимии</string>
 
@@ -64,12 +66,15 @@
     <string name="create_account_description">Нет аккаунта? Нажми здесь, чтобы создать.</string>
     <string name="reset_password_description">Нажмите здесь, чтобы сбросить пароль.</string>
     <string name="logout">Выход</string>
-    <string name="delete_account">Удалить аккаунт</string>
+    <string name="delete_account">Удалить акаунт</string>
     <string name="login_screen_title">Вход</string>
     <string name="create_account_screen_title">Создать аккаунт</string>
     <string name="yes">Да</string>
     <string name="no">Нет</string>
     <string name="delete_item">Вы уверены, что хотите удалить этот элемент?</string>
     <string name="no_item_selected">Не выбран ни один элемент</string>
+    <string name="account">Акаунт</string>
+    <string name="account_successfully_create">Акаунт успешно создан</string>
+    <string name="password_successfully_reset">Пароль успешно сброшен</string>
 
 </resources>

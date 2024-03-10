@@ -1,10 +1,14 @@
 package com.semDev.l2m_wiki.presentation.features.auth.create_account
 
+import android.content.Context
+import android.widget.Toast
+import com.semDev.l2m_wiki.R
 import com.semDev.l2m_wiki.core.navigation.CREATE_ACCOUNT_SCREEN
 import com.semDev.l2m_wiki.core.navigation.LOGIN_SCREEN
 import com.semDev.l2m_wiki.domain.core.AppResult
 import com.semDev.l2m_wiki.domain.repository.AuthRepository
 import com.semDev.l2m_wiki.presentation.core.BaseViewModel
+import com.semDev.l2m_wiki.utils.MapKeys
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import javax.inject.Inject
@@ -21,12 +25,13 @@ class CreateAccountViewModel @Inject constructor(
         );
     }
 
-    @Suppress("UNCHECKED_CAST")
+
     override fun <T> setEvent(event: CreateAccountScreenEvent, data: T) {
         when (event) {
             CreateAccountScreenEvent.CREATE_ACCOUNT -> {
                 showLoading()
-                createAccount(data as (String, String) -> Unit)
+                val dataMap = data as Map<*, *>
+                createAccount(dataMap = dataMap)
             }
             CreateAccountScreenEvent.UPDATE_EMAIL -> updateEmail(data as String)
             CreateAccountScreenEvent.UPDATE_PASSWORD -> updatePassword(data as String)
@@ -49,8 +54,8 @@ class CreateAccountViewModel @Inject constructor(
             )
         }
     }
-
-    private fun createAccount(openAndPopUp: (String, String) -> Unit) {
+    @Suppress("UNCHECKED_CAST")
+    private fun createAccount(dataMap: Map<*, *>) {
         try {
             launchCatching {
                 delay(1000L)
@@ -58,7 +63,10 @@ class CreateAccountViewModel @Inject constructor(
                     authRepository.createAccount(viewState.value.email, viewState.value.password)) {
                     is AppResult.Success -> {
                         hideLoading()
-                        openAndPopUp(LOGIN_SCREEN, CREATE_ACCOUNT_SCREEN)
+                        val context = dataMap[MapKeys.CONTEXT_KEY] as Context
+                        val action = dataMap[MapKeys.ACTION_KEY] as (String, String) -> Unit
+                        Toast.makeText(context, context.getText(R.string.account_successfully_create), Toast.LENGTH_SHORT).show()
+                        action(LOGIN_SCREEN, CREATE_ACCOUNT_SCREEN)
                     }
 
                     is AppResult.Error -> {
@@ -104,5 +112,6 @@ class CreateAccountViewModel @Inject constructor(
             )
         }
     }
+
 
 }

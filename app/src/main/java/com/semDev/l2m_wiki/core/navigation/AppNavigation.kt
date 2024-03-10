@@ -11,7 +11,8 @@ import com.semDev.l2m_wiki.presentation.features.alchemy_statistics.AlchemyStati
 import com.semDev.l2m_wiki.presentation.features.auth.create_account.CreateAccountScreen
 import com.semDev.l2m_wiki.presentation.features.auth.login.LoginScreen
 import com.semDev.l2m_wiki.presentation.features.auth.reset_password.ResetPasswordScreen
-import com.semDev.l2m_wiki.presentation.features.home.NewsScreen
+import com.semDev.l2m_wiki.presentation.features.home.HomeScreen
+import com.semDev.l2m_wiki.presentation.features.settings.SettingsScreen
 
 @Composable
 fun rememberAppState(navController: NavHostController = rememberNavController()) =
@@ -45,7 +46,7 @@ fun NavGraphBuilder.appGraph(navigationAction: NavigationAction, showAd: () -> U
     }
     composable(HOME_SCREEN) {
 
-        NewsScreen(
+        HomeScreen(
             openScreen = { route -> navigationAction.navigate(route) },
             showAd = showAd
         )
@@ -55,12 +56,21 @@ fun NavGraphBuilder.appGraph(navigationAction: NavigationAction, showAd: () -> U
     composable(ALCHEMY_COMBINATIONS_SCREEN) {
         AlchemyCombinationsScreen(
             popUpScreen = { navigationAction.popUp() },
+            openScreen = { route -> navigationAction.navigate(route) },
         )
     }
 
     composable(ALCHEMY_STATISTICS_SCREEN) {
         AlchemyStatisticsScreen(
             popUpScreen = { navigationAction.popUp() },
+            openScreen = { route -> navigationAction.navigate(route) },
+        )
+    }
+
+    composable(SETTINGS_SCREEN) {
+        SettingsScreen(
+            popUpScreen = { navigationAction.popUp() },
+            openAndPopUp = { route, popUp -> navigationAction.navigateAndPopUp(route, popUp) },
         )
     }
 
