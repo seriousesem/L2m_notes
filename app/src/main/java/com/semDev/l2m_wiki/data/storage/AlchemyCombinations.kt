@@ -11,8 +11,6 @@ import com.semDev.l2m_wiki.presentation.theme.Green
 import com.semDev.l2m_wiki.presentation.theme.LiteGray
 import com.semDev.l2m_wiki.presentation.theme.Red
 import com.semDev.l2m_wiki.utils.ImageAssets
-
-
 object AlchemyCombinationsList {
 
     val normalAlchemyCombinations = listOf(
@@ -355,6 +353,38 @@ object AlchemyCombinationsList {
                 ),
                 listOf(
                     AlchemyCombinationItem(
+                        itemEnchant = "7/6",
+                        slotColor = DarkBlue
+                        ,
+                        description = R.string.rare_7_6,
+                    ),
+                    AlchemyCombinationItem(
+                        itemEnchant = "",
+                        slotColor = DarkBlue
+                        ,
+                        description = R.string.any_rare_item,
+                    ),
+                    AlchemyCombinationItem(
+                        itemEnchant = "",
+                        slotColor = DarkBlue
+                        ,
+                        description = R.string.any_rare_item,
+                    ),
+                    AlchemyCombinationItem(
+                        itemEnchant = "",
+                        slotColor = DarkBlue
+                        ,
+                        description = R.string.any_rare_item,
+                    ),
+                    AlchemyCombinationItem(
+                        itemEnchant = "",
+                        slotColor = DarkBlue
+                        ,
+                        description = R.string.any_rare_item,
+                    ),
+                ),
+                listOf(
+                    AlchemyCombinationItem(
                         itemEnchant = "5/4",
                         slotColor = DarkBlue
                         ,
@@ -374,14 +404,16 @@ object AlchemyCombinationsList {
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = LiteGray,
-                        description = R.string.empty_slot,
+                        slotColor = DarkBlue
+                        ,
+                        description = R.string.any_rare_item,
                     ),
                     AlchemyCombinationItem(
                         itemEnchant = "",
-                        slotColor = LiteGray,
-                        description = R.string.empty_slot,
-                    )
+                        slotColor = DarkBlue
+                        ,
+                        description = R.string.any_rare_item,
+                    ),
                 ),
             ),
             alchemyCombinationResults = AlchemyCombinationResults(
@@ -932,6 +964,38 @@ object AlchemyCombinationsList {
                         description = R.string.any_rare_item,
                     ),
                 ),
+                listOf(
+                    AlchemyCombinationItem(
+                        itemEnchant = "8/6",
+                        slotColor = DarkBlue
+                        ,
+                        description = R.string.rare_8_6,
+                    ),
+                    AlchemyCombinationItem(
+                        itemEnchant = "8/6",
+                        slotColor = DarkBlue
+                        ,
+                        description = R.string.rare_8_6,
+                    ),
+                    AlchemyCombinationItem(
+                        itemEnchant = "7/4",
+                        slotColor = DarkBlue
+                        ,
+                        description = R.string.rare_7_4,
+                    ),
+                    AlchemyCombinationItem(
+                        itemEnchant = "3/0",
+                        slotColor = DarkBlue
+                        ,
+                        description = R.string.rare_3_0,
+                    ),
+                    AlchemyCombinationItem(
+                        itemEnchant = "",
+                        slotColor = DarkBlue
+                        ,
+                        description = R.string.any_rare_item,
+                    ),
+                ),
             ),
             alchemyCombinationResults = AlchemyCombinationResults(
                 items = listOf(
@@ -1438,6 +1502,33 @@ object AlchemyCombinationsList {
                         itemEnchant = "",
                         slotColor = Red,
                         description = R.string.any_heroic_item,
+                    ),
+                ),
+                listOf(
+                    AlchemyCombinationItem(
+                        itemEnchant = "7/4",
+                        slotColor = Red,
+                        description = R.string.heroic_7_4,
+                    ),
+                    AlchemyCombinationItem(
+                        itemEnchant = "8/w",
+                        slotColor = Red,
+                        description = R.string.heroic_8_w,
+                    ),
+                    AlchemyCombinationItem(
+                        itemEnchant = "",
+                        slotColor = Red,
+                        description = R.string.any_heroic_item,
+                    ),
+                    AlchemyCombinationItem(
+                        itemEnchant = "",
+                        slotColor = LiteGray,
+                        description = R.string.empty_slot,
+                    ),
+                    AlchemyCombinationItem(
+                        itemEnchant = "",
+                        slotColor = LiteGray,
+                        description = R.string.empty_slot,
                     ),
                 ),
             ),
