@@ -259,12 +259,12 @@ private fun BarChartView(
         backgroundColor = White,
         paddingEnd = 0.dp,
         barStyle = BarStyle(
-            paddingBetweenBars = 32.dp,
+            paddingBetweenBars = 24.dp,
             selectionHighlightData = SelectionHighlightData(
                 highlightTextBackgroundColor = White,
                 highlightTextColor = Blue,
                 highlightBarColor = Blue,
-                popUpLabel = { _, y -> "$quantityString${y.toInt()} - ${((y.toDouble() / alchemyResultSlotsQuantity.sum().toDouble())*100).toInt()}%" }
+                popUpLabel = { _, y -> "$quantityString${y.toInt()}-${((y.toDouble() / alchemyResultSlotsQuantity.sum().toDouble())*100).toInt()}%" }
             )
         )
     )
